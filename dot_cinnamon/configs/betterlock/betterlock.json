@@ -1,0 +1,20 @@
+{
+    "show-notifications": {
+        "type": "switch",
+        "default": false,
+        "description": "Show notifications",
+        "value": false
+    },
+    "indicator-type": {
+        "type": "combobox",
+        "default": "both",
+        "options": {
+            "Num Lock and Caps Lock": "both",
+            "Num Lock only": "num-only",
+            "Caps Lock only": "caps-only"
+        },
+        "description": "Choose which indicator to show",
+        "value": "caps-only"
+    },
+    "__md5__": "b3fb1c0eb3d2fa19cc38406fb2d327e4"
+}
