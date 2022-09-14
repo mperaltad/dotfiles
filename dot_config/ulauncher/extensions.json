@@ -1,0 +1,65 @@
+{
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2021-10-19T12:07:24.807229",
+        "last_commit": "4c6af50d1c9a24d5aad2c597634ff0c634972a5c",
+        "last_commit_time": "2021-08-08T19:19:59"
+    },
+    "com.github.isacikgoz.ukill": {
+        "id": "com.github.isacikgoz.ukill",
+        "url": "https://github.com/isacikgoz/ukill",
+        "updated_at": "2021-10-19T12:07:47.958995",
+        "last_commit": "bc50d9f41d46b6813a5aeebddd15734dcdb9d8db",
+        "last_commit_time": "2019-05-28T18:30:00"
+    },
+    "com.github.ulauncher.ulauncher-timer": {
+        "id": "com.github.ulauncher.ulauncher-timer",
+        "url": "https://github.com/ulauncher/ulauncher-timer",
+        "updated_at": "2021-10-19T12:08:12.357412",
+        "last_commit": "4262fc24db08610d01ea311d2e12f22588c98886",
+        "last_commit_time": "2020-11-03T07:21:30"
+    },
+    "com.github.manahter.ulauncher-translate": {
+        "id": "com.github.manahter.ulauncher-translate",
+        "url": "https://github.com/manahter/ulauncher-translate",
+        "updated_at": "2021-10-19T12:22:39.573631",
+        "last_commit": "f81d32c583c7e3542bdba655e991a56e6d9a2c28",
+        "last_commit_time": "2021-04-09T18:12:40"
+    },
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2021-10-19T12:23:36.375581",
+        "last_commit": "b217c94ceb559b76c049114573f87b6f6323ec70",
+        "last_commit_time": "2021-09-22T19:59:58"
+    },
+    "com.github.brpaz.ulauncher-aws": {
+        "id": "com.github.brpaz.ulauncher-aws",
+        "url": "https://github.com/brpaz/ulauncher-aws",
+        "updated_at": "2021-10-19T12:30:47.982806",
+        "last_commit": "4fad6ace739e5610a89d9b91fefc70cf8e2adbb3",
+        "last_commit_time": "2021-05-17T21:42:07"
+    },
+    "com.github.tchar.ulauncher-albert-calculate-anything": {
+        "id": "com.github.tchar.ulauncher-albert-calculate-anything",
+        "url": "https://github.com/tchar/ulauncher-albert-calculate-anything",
+        "updated_at": "2021-11-07T14:24:10.633722",
+        "last_commit": "ee0903174c8b87cd1f7c3b6c1acef10702547507",
+        "last_commit_time": "2021-08-12T06:39:56"
+    },
+    "com.github.ralcaidev.ulauncher-extension-list": {
+        "id": "com.github.ralcaidev.ulauncher-extension-list",
+        "url": "https://github.com/ralcaidev/ulauncher-extension-list",
+        "updated_at": "2021-11-07T14:32:12.622652",
+        "last_commit": "0cb7711bc1dc89a76bcb89d29082e18deac28227",
+        "last_commit_time": "2019-07-19T06:31:41"
+    },
+    "com.github.ahaasler.ulauncher-tmux": {
+        "id": "com.github.ahaasler.ulauncher-tmux",
+        "url": "https://github.com/ahaasler/ulauncher-tmux",
+        "updated_at": "2021-11-07T14:46:59.245499",
+        "last_commit": "dd631a2e5a1d8bf2ab21095b43afe068443f02b9",
+        "last_commit_time": "2021-06-05T16:42:59"
+    }
+}
