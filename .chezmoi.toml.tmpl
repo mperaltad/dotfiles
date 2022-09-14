@@ -1,4 +1,5 @@
 {{- $work := promptBoolOnce . "work" "Is this a work computer or not" false -}}
+{{- $linux_username := promptStringOnce . "linux_username" "Linux username (e.g. mperalta)" -}}
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $git_name := promptStringOnce . "git_name" "git user name" -}}
 {{- $github_username := promptStringOnce . "github_username" "github user name" -}}
@@ -9,8 +10,11 @@
 {{- $git_signingkey = promptStringOnce . "git_signingkey" "git gpg signingkey" -}}
 {{- end }}
 {{- $zsh_cdpath := promptStringOnce . "zsh_cdpath" "zsh cdpath (e.g. $HOME/golang/src/github.com/company)" -}}
+{{- $onepwd_account := promptStringOnce . "onepwd_account" "onepwd_account" -}}
 [data]
     work = {{ $work }}
+    zsh_cdpath = {{ $zsh_cdpath | quote }}
+    linux_username = {{ $linux_username | quote }}
     email = {{ $email | quote }}
     git_name = {{ $git_name | quote }}
     github_username = {{ $github_username | quote }}
@@ -18,4 +22,4 @@
 {{- if $git_gpg_enabled }}
     git_signingkey = {{ $git_signingkey | quote }}
 {{- end }}
-    zsh_cdpath = {{ $zsh_cdpath | quote }}
+    onepwd_account = {{ $onepwd_account | quote  }}

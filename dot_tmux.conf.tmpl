@@ -1,0 +1,136 @@
+# Changing tmux prefix
+unbind C-b
+# set -g prefix `
+# bind-key ` send-prefix
+set -g prefix ç
+bind-key ç send-prefix
+
+##################
+# List of plugins
+##################
+set -g @plugin 'tmux-plugins/tpm' # plugin manager
+set -g @plugin 'tmux-plugins/tmux-sensible' # Set of tmux "standard de facto" options
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-yank' # copy to system clipboard on any OS
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-fpp' # prefix+f choose a file from terminal and edits it 
+set -g @plugin 'tmux-plugins/tmux-sidebar' # show tree sidebar with prefix+tab or prefix+backspace
+set -g @plugin 'roosta/tmux-pop' # highlights the new pane
+set -g @plugin 'Morantron/tmux-fingers' # prefix+F copy files to clipboard
+set -g @plugin 'jaclu/tmux-menus' # prefix+\ Popup menus to help with managing your environment
+set -g @plugin 'yardnsm/tmux-1password' # prefix+u access 1Password items in a temp pane 
+# set -g @plugin 'fcsonline/tmux-thumbs'
+# set -g @plugin 'tmux-plugins/tmux-sessionist'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# tmux-resurrect config
+set -g @continuum-restore 'on'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @continuum-save-interval '5'
+set -g @resurrect-save 'S'
+set -g @resurrect-restore 'R'
+
+# Fingers tmux plugin config
+# set -g @fingers-key 'f'
+set -g @fingers-compact-hints 0
+set -g @fingers-main-action ":paste:"
+set -g @fingers-ctrl-action ":copy:"
+set -g @fingers-shift-action ":open:"
+
+set -g @1password-account '{{ .onepwd_account }}'
+set -g @1password-copy-to-clipboard 'on'
+
+##################################################
+# set zsh as default shell
+set-option -g default-command /bin/zsh
+
+#############################
+# Mac clipboard issues fixes
+#############################
+# tmux system clipboard integration
+# set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# tmux vim clipboard issues fixes
+#================================
+#set -g set-clipboard on
+# Use vim keybindings in copy mode
+# setw -g mode-keys vi
+#set-window-option -g mode-keys vi
+# Setup 'v' to begin selection as in Vim
+#bind-key -T copy-mode-vi v send -X begin-selection
+#bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+#bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
+#bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+
+
+# Update default binding of `Enter` to also use copy-pipe
+# unbind -T vi-copy Enter
+# bind-key -T vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Bind ']' to use pbpaste
+# bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
+
+
+# Enable vi copy mode - if enabled together with yank it copies automatically to system clipboard after space+enter
+set -g mode-keys vi
+# Make Y copy the entire current line
+bind -T copy-mode-vi Y send-keys -X copy-line
+
+########################################
+
+
+# Enabled mouse integration (deprecated mouse specific params, only mouse now)
+set -g mouse on
+
+# start window index of 1
+set-option -g base-index 1
+setw -g pane-base-index 1
+
+# Open panes and windows in current path
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
+
+# Disable automatic window renaming
+set-window-option -g allow-rename off
+set-window-option -g automatic-rename off
+
+# Shift-arrow keys without prefix key to switch panes
+bind -n S-Left select-pane -L
+bind -n S-Right select-pane -R
+bind -n S-Up select-pane -U
+bind -n S-Down select-pane -D
+
+# Alt-arrow keys without prefix key to switch windows
+bind -n M-Left  previous-window
+bind -n M-Right next-window
+
+# Bad Wolf by Steve Losh
+# =====================
+set -g status-style fg=white,bg=colour234
+# set -g status-bg default #set for transparent background
+set -g window-status-activity-style bold
+set -g pane-border-style fg=colour245
+set -g pane-active-border-style fg=colour39
+set -g message-style fg=colour16,bg=colour221,bold
+# Custom status bar
+# Powerline
+set -g status-left-length 32
+set -g status-right-length 150
+set -g status-interval 5
+# Lets add the current weather to our status bar—why? Well Why the french-toast not?
+set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour254,bg=colour238,noreversebold]#[fg=colour238,bg=colour234,nobold]'
+# set -g status-right '#[fg=colour16,bg=colour254,bold] Batt: #{battery_icon}#{battery_remain} ❬ Online: #{online_status} ❬ %a %d %b'
+# set -g status-right '#[fg=colour16,bg=colour254,bold] Online: #{online_status} ❬ %a %d %b'
+set -g status-right '#[fg=colour16,bg=colour254,bold] #{battery_icon_status} #{battery_percentage} #{battery_remain} ❬ %a %d %b'
+set -g window-status-format "#[fg=white,bg=colour234] #I #W "
+set -g window-status-current-format "#[fg=colour234,bg=colour39] #[fg=colour16,bg=colour39,noreverse,bold] #I ❭ #W #[fg=colour39,bg=colour234,nobold]"
+
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
