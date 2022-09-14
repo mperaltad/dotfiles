@@ -1,0 +1,88 @@
+[user]
+    name = {{ .git_name }}
+    email = {{ .email }} 
+{{- if .git_gpg_enabled }} 
+    signingkey = {{ .git_signingkey }}
+{{- end }}
+
+[github]
+    username = {{ .github_username }}
+
+[alias]
+    st = status
+    ci = commit
+    cia = commit -a
+    lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    co = checkout
+    ciam = commit -a -m
+    br = branch
+    cim = commit -m
+    bra = branch -a
+    brr = branch -r
+    cherryv = cherry -v
+    loc = log --pretty=format:"-\\ (%h)\\ %s" --no-merges
+    lt = describe --tags --abbrev=0
+    l = log --graph --date=short
+    changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+    difff = diff --name-status
+    diffs = diff --staged
+    diffw = diff --word-diff
+    diffws = diff --word-diff --staged
+    diffh = diff HEAD^
+    r = remote -v                    # show remotes (verbose)
+    sb = "!git branch | fzf | xargs git switch"
+
+[color]
+    ui = true
+
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = vim
+    pager = delta # --width 400
+    autocrlf = input
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = line-numbers decorations
+    side-by-side = true
+    syntax-theme = Dracula
+    plus-style = syntax "#003800"
+    minus-style = syntax "#3f0001"
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28
+
+{{- if .work }}
+
+# https to ssh conversion added to make go modules work in go v1.11
+[url "ssh://git@github.com/socialpoint/"]
+    insteadOf = https://github.com/socialpoint/
+{{- end }}
+
+[push]
+    default = current
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[pull]
+    rebase = true
+
+{{- if .git_gpg_enabled }} 
+[commit]
+    gpgSign = true
+{{- end }}
