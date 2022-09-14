@@ -1,7 +1,5 @@
-{{ if eq .chezmoi.hostname "manuelperalta-SP-manjaro" }}
+{{- if .work }}
 {{- onepasswordDocument "qngccxxpdy7hgxb3lditmbybci" -}}
-{{ else if eq .chezmoi.hostname "WHATEVER HOME HOST" }}
-{{- onepasswordDocument "HOME OP Doc" -}}
-{{ else }}
-{{- onepasswordDocument "Default ssh doc" -}}
-{{ end }}
+{{- else }}
+{{- onepasswordDocument "Home ssh doc" -}}
+{{- end }}
