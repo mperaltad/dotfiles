@@ -8,6 +8,7 @@
 {{- if $git_gpg_enabled }}
 {{- $git_signingkey = promptStringOnce . "git_signingkey" "git gpg signingkey" -}}
 {{- end }}
+{{- $zsh_cdpath := promptStringOnce . "zsh_cdpath" "zsh cdpath (e.g. $HOME/golang/src/github.com/company)" -}}
 [data]
     work = {{ $work }}
     email = {{ $email | quote }}
@@ -17,3 +18,4 @@
 {{- if $git_gpg_enabled }}
     git_signingkey = {{ $git_signingkey | quote }}
 {{- end }}
+    zsh_cdpath = {{ $zsh_cdpath | quote }}

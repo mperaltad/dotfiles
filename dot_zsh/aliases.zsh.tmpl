@@ -1,0 +1,57 @@
+# ZSH aliases
+#########
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zsh-reload-config="source ~/.zshrc"
+
+# PHP 
+#########
+alias sf="php -dmemory_limit=-1 -d xdebug.remote_autostart=0 bin/console"
+alias sfrouterdebug='sf router:debug'
+alias sfcontainerdebug='sf container:debug'
+alias composer="php -dmemory_limit=-1 -d xdebug.remote_autostart=0 /usr/bin/composer"
+alias composerinstall="php -dmemory_limit=-1 -d xdebug.remote_autostart=0 /usr/bin/composer install"
+alias composerupdate="php -dmemory_limit=-1 -d xdebug.remote_autostart=0 /usr/bin/composer update"
+alias php-cs-fixer='php -dmemory_limit=-1 -d xdebug.remote_autostart=0 ~/.composer/vendor/bin/php-cs-fixer'
+alias phpunit='php -dmemory_limit=-1 -d xdebug.remote_autostart=0 ~/.composer/vendor/bin/phpunit'
+alias phpspec='php -dmemory_limit=-1 -d xdebug.remote_autostart=0 ~/.composer/vendor/bin/phpspec'
+
+# Git https://answers.yahoo.com/question/index?qid=20090206205204AACphzd
+#########
+alias gitcleanbranches='git fetch origin; git remote prune origin; git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | xargs -n 1 git branch -d'
+alias gitammend='git add .; git commit --amend'
+alias gc="git checkout"
+alias gpom="git pull origin master"
+alias gcom="git checkout master"
+alias gmaster="git fetch origin; git checkout master; git pull origin master"
+alias gm="git fetch origin; git checkout master; git pull origin master"
+alias gfo="git fetch origin"
+alias gf="git fuzzy"
+alias gfs="git fuzzy status"
+alias lg="lazygit"
+
+# Docker
+#########
+alias dockerexecti='docker exec -ti'
+alias docker-clear-space='docker rm `docker ps -qa`; docker rmi `docker images -f dangling=true -q`'
+alias docker-stop-running-containers='docker stop `docker ps -q`'
+alias mkubectl="minikube kubectl --"
+
+# tmux
+#########
+alias tmuxattach='tmux attach -t'
+alias tmuxnewsession='tmux new-session -s'
+alias tmuxlistsessions='tmux list-sessions'
+alias tmuxkillsession0andattachtopsession='tmux kill-session -t 0; tmux attach -t top'
+alias tmuxinstallplugins='~/.tmux/plugins/tpm/bin/install_plugins'
+alias tmuxupdateplugins='~/.tmux/plugins/tpm/bin/update_plugins'
+alias tmux-reload-config='tmux source ~/.tmux.conf'
+
+# Misc
+#########
+alias g.="/var/lib/flatpak/app/com.jetbrains.GoLand/current/active/files/bin/goland.sh . > /dev/null 2>&1 &"
+alias p.="/var/lib/flatpak/app/com.jetbrains.PhpStorm/current/active/files/extra/phpstorm/bin/phpstorm.sh . > /dev/null 2>&1 &"
+alias d.="/var/lib/flatpak/app/com.jetbrains.DataGrip/current/active/files/extra/datagrip/bin/datagrip.sh > /dev/null 2>&1 &"
+alias w.="/var/lib/flatpak/app/com.jetbrains.WebStorm/current/active/files/extra/webstorm/bin/webstorm.sh . > /dev/null 2>&1 &"
+alias cm="chezmoi"
+alias order='sort | uniq -c | sort -nr'

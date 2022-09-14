@@ -1,0 +1,24 @@
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
+Plug 'Valloric/YouCompleteMe'
+
+" Initialize plugin system
+call plug#end()
+
+syntax on
+set autoindent
+set smartindent
+set number
+set mouse=a
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+filetype plugin indent on
