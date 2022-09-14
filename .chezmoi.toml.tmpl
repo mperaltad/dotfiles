@@ -1,0 +1,19 @@
+{{- $work := promptBoolOnce . "work" "Is this a work computer or not" false -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $git_name := promptStringOnce . "git_name" "git user name" -}}
+{{- $github_username := promptStringOnce . "github_username" "github user name" -}}
+{{/* */}}
+{{- $git_gpg_enabled := promptBoolOnce . "git_gpg_enabled" "Enable gpg git (true/false)" false -}}
+{{- $git_signingkey := "" -}}
+{{- if $git_gpg_enabled }}
+{{- $git_signingkey = promptStringOnce . "git_signingkey" "git gpg signingkey" -}}
+{{- end }}
+[data]
+    work = {{ $work }}
+    email = {{ $email | quote }}
+    git_name = {{ $git_name | quote }}
+    github_username = {{ $github_username | quote }}
+    git_gpg_enabled = {{ $git_gpg_enabled }}
+{{- if $git_gpg_enabled }}
+    git_signingkey = {{ $git_signingkey | quote }}
+{{- end }}
