@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+{{ template "script_no_root" . }}
+{{ template "script_caffeinate" . }}
+{{ template "script_darwin_only" . }}
+{{ template "script_brew_path" . }}
+
+if [ -z ${HOMEBREW_PREFIX+x} ]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+{{ if eq .chezmoi.arch "arm64" }}
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ else }}
+  eval "$(/usr/local/bin/brew shellenv)"
+{{ end }}
+else
+  echo "HOMEBREW_PREFIX set to $HOMEBREW_PREFIX"
+fi
+
+brew analytics off
+
+brew bundle --verbose --no-upgrade --no-lock || true
+

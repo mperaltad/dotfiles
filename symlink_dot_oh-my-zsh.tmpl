@@ -1,5 +1,5 @@
 {{- if .work }}
-/home/{{ .linux_username }}/Google Drive/dotfiles_linux/.oh-my-zsh
+{{ .home_path }}/Google Drive/dotfiles_work_generic/.oh-my-zsh
 {{ else }}
-/home/{{ .linux_username }}/Google Drive/dotfiles_personal/.oh-my-zsh
+{{ .home_path }}/Google Drive/dotfiles_personal/.oh-my-zsh
 {{ end }}

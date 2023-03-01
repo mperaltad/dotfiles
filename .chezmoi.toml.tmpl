@@ -1,5 +1,7 @@
+{{- if eq .chezmoi.os "darwin" }}
+{{- $darwin_hostname = promptStringOnce . "darwin_hostname" "Darwin Host name" -}}
+{{- end }}
 {{- $work := promptBoolOnce . "work" "Is this a work computer or not" false -}}
-{{- $linux_username := promptStringOnce . "linux_username" "Linux username (e.g. mperalta)" -}}
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $git_name := promptStringOnce . "git_name" "git user name" -}}
 {{- $github_username := promptStringOnce . "github_username" "github user name" -}}
@@ -13,8 +15,11 @@
 {{- $onepwd_account := promptStringOnce . "onepwd_account" "onepwd_account" -}}
 [data]
     work = {{ $work }}
+    home_path = {{ $HOME }}
+{{- if eq .chezmoi.os "darwin" }}
+    darwin_hostname = {{ $darwin_hostname | quote }}
+{{- end }}
     zsh_cdpath = {{ $zsh_cdpath | quote }}
-    linux_username = {{ $linux_username | quote }}
     email = {{ $email | quote }}
     git_name = {{ $git_name | quote }}
     github_username = {{ $github_username | quote }}

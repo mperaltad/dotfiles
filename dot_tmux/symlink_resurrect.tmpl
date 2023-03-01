@@ -1,5 +1,5 @@
 {{- if .work }} 
-/home/{{ .linux_username }}/Google Drive/dotfiles_linux/.tmux/resurrect
+{{ .home_path }}/Google Drive/dotfiles_linux/.tmux/resurrect
 {{ else }}
-/home/{{ .linux_username }}/Google Drive/dotfiles_personal/.tmux/resurrect
+{{ .home_path }}/Google Drive/dotfiles_personal/.tmux/resurrect
 {{ end }}

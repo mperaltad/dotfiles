@@ -49,9 +49,14 @@ alias tmux-reload-config='tmux source ~/.tmux.conf'
 
 # Misc
 #########
+{{- if eq .chezmoi.os "linux" }}
 alias g.="/var/lib/flatpak/app/com.jetbrains.GoLand/current/active/files/bin/goland.sh . > /dev/null 2>&1 &"
 alias p.="/var/lib/flatpak/app/com.jetbrains.PhpStorm/current/active/files/extra/phpstorm/bin/phpstorm.sh . > /dev/null 2>&1 &"
 alias d.="/var/lib/flatpak/app/com.jetbrains.DataGrip/current/active/files/extra/datagrip/bin/datagrip.sh > /dev/null 2>&1 &"
 alias w.="/var/lib/flatpak/app/com.jetbrains.WebStorm/current/active/files/extra/webstorm/bin/webstorm.sh . > /dev/null 2>&1 &"
+{{- end }}
 alias cm="chezmoi"
 alias order='sort | uniq -c | sort -nr'
+{{- if .work }}
+alias k="kubectl"
+{{- end }}

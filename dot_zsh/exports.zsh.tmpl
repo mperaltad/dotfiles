@@ -2,28 +2,3 @@
 #export PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-
-{{- if .work }}
-# S3 GRUNT frontend-bundle
-###############
-export AWS_DEFAULT_REGION="us-east-1"
-{{- end }}
-
-# Docker
-###############
-export USERID=$(id -u)
-export GITHUB_ACCESS_TOKEN="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"
-export DOCKER_HOST_IP=$(ip route | grep docker0 | awk '{print $9}')
-
-# Python
-#########
-# eval "$(pyenv init -)"
-# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-# export WORKON_HOME=$HOME/.virtualenvs
-# pyenv virtualenvwrapper_lazy
-
-# gpg git commit signed fix
-###########################
-# export GPG_TTY=$(tty)
-
-# export LC_ALL=en_US.UTF-8

@@ -1,5 +1,9 @@
 {{- if .work }}
-/home/{{ .linux_username }}/Google Drive/dotfiles_linux/.zsh_history
+{{- if eq .chezmoi.os "darwin" }}
+{{ .home_path }}/Google Drive/dotfiles_work_generic/.zsh_history
+{{- else if eq .chezmoi.os "linux" }}
+{{ .home_path }}/Google Drive/dotfiles_linux/.zsh_history
+{{- end}}
 {{ else }}
-/home/{{ .linux_username }}/Google Drive/dotfiles_personal/.zsh_history
+{{ .home_path }}/Google Drive/dotfiles_personal/.zsh_history
 {{ end }}
