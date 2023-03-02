@@ -15,7 +15,7 @@
 {{- $onepwd_account := promptStringOnce . "onepwd_account" "onepwd_account" -}}
 [data]
     work = {{ $work }}
-    home_path = {{ $HOME }}
+    home_path = {$HOME}
 {{- if eq .chezmoi.os "darwin" }}
     darwin_hostname = {{ $darwin_hostname | quote }}
 {{- end }}
