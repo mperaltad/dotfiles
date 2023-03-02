@@ -1,3 +1,4 @@
+{{- $darwin_hostname = promptStringOnce . "darwin_hostname" "Darwin Host name" -}}
 {{- if eq .chezmoi.os "darwin" }}
 {{- $darwin_hostname = promptStringOnce . "darwin_hostname" "Darwin Host name" -}}
 {{- end }}
@@ -15,7 +16,7 @@
 {{- $onepwd_account := promptStringOnce . "onepwd_account" "onepwd_account" -}}
 [data]
     work = {{ $work }}
-
+    home_path = {{ $home_path | quote }}
 {{- if eq .chezmoi.os "darwin" }}
     darwin_hostname = {{ $darwin_hostname | quote }}
 {{- end }}
