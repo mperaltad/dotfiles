@@ -55,17 +55,17 @@ brew "xpdf"
 brew "zsh"
 
 # Command-line helper for the 1Password password manager
-cask "1password-cli"
+# cask "1password-cli"
 # Web browser
-cask "google-chrome"
+# cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # JetBrains tools manager
-cask "jetbrains-toolbox"
+# cask "jetbrains-toolbox"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Collaboration platform for API development
-cask "postman"
+# cask "postman"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Music streaming service
@@ -73,7 +73,7 @@ cask "spotify"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Open-source code editor
-cask "visual-studio-code"
+# cask "visual-studio-code"
 
 cask "caffeine"
 cask "insync"
@@ -83,10 +83,10 @@ cask "flycut"
 cask "diffmerge"
 cask "notion"
 cask "omniplan"
-cask "stay"
+#cask "stay"
 cask "alacritty"
 cask "firefox"
-cask "zoom"
+#cask "zoom"
 cask "xmind"
 cask "todoist"
 
