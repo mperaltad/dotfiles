@@ -7,7 +7,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 " Initialize plugin system
 call plug#end()
@@ -21,4 +21,5 @@ set mouse=a
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set backspace=indent,eol,start
 filetype plugin indent on

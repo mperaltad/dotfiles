@@ -14,14 +14,12 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-yank' # copy to system clipboard on any OS
 set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-online-status'
 set -g @plugin 'tmux-plugins/tmux-fpp' # prefix+f choose a file from terminal and edits it 
 set -g @plugin 'tmux-plugins/tmux-sidebar' # show tree sidebar with prefix+tab or prefix+backspace
 set -g @plugin 'roosta/tmux-pop' # highlights the new pane
-set -g @plugin 'Morantron/tmux-fingers' # prefix+F copy files to clipboard
 set -g @plugin 'jaclu/tmux-menus' # prefix+\ Popup menus to help with managing your environment
 set -g @plugin 'yardnsm/tmux-1password' # prefix+u access 1Password items in a temp pane 
-# set -g @plugin 'fcsonline/tmux-thumbs'
-# set -g @plugin 'tmux-plugins/tmux-sessionist'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
@@ -35,15 +33,16 @@ set -g @continuum-save-interval '5'
 set -g @resurrect-save 'S'
 set -g @resurrect-restore 'R'
 
-# Fingers tmux plugin config
-# set -g @fingers-key 'f'
-set -g @fingers-compact-hints 0
-set -g @fingers-main-action ":paste:"
-set -g @fingers-ctrl-action ":copy:"
-set -g @fingers-shift-action ":open:"
+# tmux-fpp config
+set -g @fpp-bind off
+bind-key F run-shell '~/.tmux/plugins/tmux-fpp/fpp.tmux start edit'
+bind-key f run-shell '~/.tmux/plugins/tmux-fpp/fpp.tmux start paste'
+
 
 set -g @1password-account '{{ .onepwd_account }}'
 set -g @1password-copy-to-clipboard 'on'
+
+set -g @batt_remain_short: 'false'
 
 ##################################################
 # set zsh as default shell
@@ -59,7 +58,7 @@ set-option -g default-command /bin/zsh
 #================================
 #set -g set-clipboard on
 # Use vim keybindings in copy mode
-# setw -g mode-keys vi
+#setw -g mode-keys vi
 #set-window-option -g mode-keys vi
 # Setup 'v' to begin selection as in Vim
 #bind-key -T copy-mode-vi v send -X begin-selection
@@ -126,8 +125,8 @@ set -g status-interval 5
 # Lets add the current weather to our status bar—why? Well Why the french-toast not?
 set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour254,bg=colour238,noreversebold]#[fg=colour238,bg=colour234,nobold]'
 # set -g status-right '#[fg=colour16,bg=colour254,bold] Batt: #{battery_icon}#{battery_remain} ❬ Online: #{online_status} ❬ %a %d %b'
-# set -g status-right '#[fg=colour16,bg=colour254,bold] Online: #{online_status} ❬ %a %d %b'
-set -g status-right '#[fg=colour16,bg=colour254,bold] #{battery_icon_status} #{battery_percentage} #{battery_remain} ❬ %a %d %b'
+# set -g status-right '#[fg=colour16,bg=co lour254,bold] Online: #{online_status} ❬ %a %d %b'
+set -g status-right '#[fg=colour16,bg=colour254,bold] #{battery_icon_status} #{battery_percentage} #{battery_remain} ❬ online:#{online_status}❬ %a %d %b'
 set -g window-status-format "#[fg=white,bg=colour234] #I #W "
 set -g window-status-current-format "#[fg=colour234,bg=colour39] #[fg=colour16,bg=colour39,noreverse,bold] #I ❭ #W #[fg=colour39,bg=colour234,nobold]"
 
