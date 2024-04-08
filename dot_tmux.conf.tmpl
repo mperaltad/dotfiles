@@ -125,7 +125,7 @@ set -g status-interval 5
 # Lets add the current weather to our status bar—why? Well Why the french-toast not?
 set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour254,bg=colour238,noreversebold]#[fg=colour238,bg=colour234,nobold]'
 # set -g status-right '#[fg=colour16,bg=colour254,bold] Batt: #{battery_icon}#{battery_remain} ❬ Online: #{online_status} ❬ %a %d %b'
-# set -g status-right '#[fg=colour16,bg=co lour254,bold] Online: #{online_status} ❬ %a %d %b'
+# set -g status-right '#[fg=colour16,bg=colour254,bold] Online: #{online_status} ❬ %a %d %b'
 set -g status-right '#[fg=colour16,bg=colour254,bold] #{battery_icon_status} #{battery_percentage} #{battery_remain} ❬ online:#{online_status}❬ %a %d %b'
 set -g window-status-format "#[fg=white,bg=colour234] #I #W "
 set -g window-status-current-format "#[fg=colour234,bg=colour39] #[fg=colour16,bg=colour39,noreverse,bold] #I ❭ #W #[fg=colour39,bg=colour234,nobold]"
