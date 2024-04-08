@@ -5,6 +5,7 @@
 .tmux/plugins/*
 !.tmux/plugins/tpm/
 .vim/plugged/**
+.vim/.netrwhist
 .viminfo
 .zcompdump*
 .zsh_sessions
