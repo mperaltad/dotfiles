@@ -1,3 +1,4 @@
+.aws
 .DS_Store
 .Trash
 .oh-my-zsh/cache/**
@@ -9,6 +10,7 @@
 .viminfo
 .zcompdump*
 .zsh_sessions
+{{- if eq .chezmoi.os "darwin" }}
 Applications
 Desktop
 Documents
@@ -23,3 +25,4 @@ Postman
 Public
 personal_dotfiles
 projects
+{{- end }}
