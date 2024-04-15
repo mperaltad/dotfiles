@@ -1,6 +1,8 @@
 .aws
-.DS_Store
-.Trash
+.ecr
+.kube
+.npm
+.nvm
 .oh-my-zsh/cache/**
 .oh-my-zsh/custom/themes/powerlevel10k/**/*.zwc
 .tmux/plugins/*
@@ -11,6 +13,8 @@
 .zcompdump*
 .zsh_sessions
 {{- if eq .chezmoi.os "darwin" }}
+.DS_Store
+.Trash
 Applications
 Desktop
 Documents
