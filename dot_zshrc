@@ -16,7 +16,7 @@ ZSH_THEME="manu"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=30
@@ -51,20 +51,27 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    github
+    1password
+    asdf
+    aws
     colored-man-pages
     colorize
-    virtualenv
+    docker
+    docker-compose
+    fzf
+    github
+    gnu-utils
+    gradle
     pip
     python
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-    docker-compose
-    docker
     redis-cli
+    rsync
     terraform
-    aws
-    1password
+    thefuck
+    virtualenv
+    zsh-autosuggestions
+    zsh-interactive-cd
+    zsh-syntax-highlighting
 )
 
 # User configuration
@@ -106,11 +113,3 @@ source ~/.zsh/prompt.zsh
 source ~/.zsh/zsh.zsh
 source ~/.zsh/git-prompt.zsh
 
-# Social Point Cli 
-# PROG=spc source /Users/manuel.peralta/Library/Caches/SocialPoint/spc-bash-completion-zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/manuel.peralta/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/manu/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/manuel.peralta/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/manu/google-cloud-sdk/completion.zsh.inc'; fi

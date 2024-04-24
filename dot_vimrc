@@ -7,6 +7,9 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+" ----- Look&Feel ------------------------------------------------------
+Plug 'vim-airline/vim-airline' " status/tabline for vim 
+
 " ----- Writing code ---------------------------------------------------
 Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'vim-syntastic/syntastic' " On-the-fly syntax checking
@@ -21,7 +24,9 @@ Plug 'matze/vim-move' " text movement functionality editor
 " ----- Files interaction ----------------------------------------------
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs' " F2 to open tab with file tree 
-Plug 'ctrlpvim/ctrlp.vim' " Ctrl+p Full path fuzzy file, buffer, mru, tag, ... finder
+Plug 'junegunn/fzf' " enables :FZF command (use :FZF! for full screen mode) CTRL-T, CTRL-X or CTRL-V to open in a new tabs, in horizontal splits, of in vertical splits respectively
+Plug 'junegunn/fzf.vim'
+"Plug 'ctrlpvim/ctrlp.vim' " Ctrl+p Full path fuzzy file, buffer, mru, tag, ... finder
 "Plug 'dyng/ctrlsf.vim' " Pending to reasearch - advanced search
 
 " ----- Git stuff ------------------------------------------------------
