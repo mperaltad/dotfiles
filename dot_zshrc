@@ -111,5 +111,4 @@ source ~/.zsh/exports.zsh
 source ~/.zsh/tweaks.zsh
 source ~/.zsh/prompt.zsh
 source ~/.zsh/zsh.zsh
-source ~/.zsh/git-prompt.zsh
-
+# source ~/.zsh/git-prompt.zsh replaced by git-prompt plugin
