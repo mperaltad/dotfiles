@@ -74,6 +74,7 @@ hi clear SignColumn
 nmap <F2> :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 " let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeQuitOnOpen = 1
 
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'

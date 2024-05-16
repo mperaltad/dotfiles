@@ -1,11 +1,11 @@
 # ZSH aliases
-#########
+##############
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshrc="source ~/.zshrc"
 
 # PHP 
-#########
+#############
 alias sf="php -dmemory_limit=-1 -d xdebug.remote_autostart=0 bin/console"
 alias sfrouterdebug='sf router:debug'
 alias sfcontainerdebug='sf container:debug'
@@ -35,7 +35,8 @@ alias lg="lazygit"
 alias dockerexecti='docker exec -ti'
 alias docker-clear-space='docker rm `docker ps -qa`; docker rmi `docker images -f dangling=true -q`'
 alias docker-stop-running-containers='docker stop `docker ps -q`'
-alias mkubectl="minikube kubectl --"
+alias mk="minikube kubectl --"
+alias k="kubectl"
 
 # tmux
 #########
@@ -47,16 +48,20 @@ alias tmuxinstallplugins='~/.tmux/plugins/tpm/bin/install_plugins'
 alias tmuxupdateplugins='~/.tmux/plugins/tpm/bin/update_plugins'
 alias tmuxrc='tmux source ~/.tmux.conf'
 
-# Misc
-#########
+# JetBrains
+##############
 {{- if eq .chezmoi.os "linux" }}
 alias g.="/var/lib/flatpak/app/com.jetbrains.GoLand/current/active/files/bin/goland.sh . > /dev/null 2>&1 &"
 alias p.="/var/lib/flatpak/app/com.jetbrains.PhpStorm/current/active/files/extra/phpstorm/bin/phpstorm.sh . > /dev/null 2>&1 &"
 alias d.="/var/lib/flatpak/app/com.jetbrains.DataGrip/current/active/files/extra/datagrip/bin/datagrip.sh > /dev/null 2>&1 &"
 alias w.="/var/lib/flatpak/app/com.jetbrains.WebStorm/current/active/files/extra/webstorm/bin/webstorm.sh . > /dev/null 2>&1 &"
+{{- else if eq .chezmoi.os "darwin" }}
+alias i.="~/Library/Application\ Support/JetBrains/Toolbox/scripts/idea ."
+alias p.="~/Library/Application\ Support/JetBrains/Toolbox/scripts/pycharm ."
+alias w.="~/Library/Application\ Support/JetBrains/Toolbox/scripts/webstorm ."
 {{- end }}
+
+# Misc
+############
 alias cm="chezmoi"
 alias order='sort | uniq -c | sort -nr'
-{{- if .work }}
-alias k="kubectl"
-{{- end }}
