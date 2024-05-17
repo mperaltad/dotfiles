@@ -36,15 +36,15 @@ Plug 'airblade/vim-gitgutter' " GIT: shows +,- or ~ next to line changed in git
 " Initialize plugin system
 call plug#end()
 
-set nu                  " Enable line numbers
-syntax on               " Enable synax highlighting
-set incsearch           " Enable incremental search
-set hlsearch            " Enable highlight search
-set splitbelow          " Always split below"
-set mouse=a             " Enable mouse drag on window splits
-set tabstop=4           " How many columns of whitespace a \t is worth
-set shiftwidth=4        " How many columns of whitespace a “level of indentation” is worth
-set expandtab           " Use spaces when tabbing
+set nu                    " Enable line numbers
+syntax on                 " Enable synax highlighting
+set incsearch             " Enable incremental search
+set hlsearch              " Enable highlight search
+set splitbelow            " Always split below"
+set mouse=a               " Enable mouse drag on window splits
+set tabstop=4             " How many columns of whitespace a \t is worth
+set shiftwidth=4          " How many columns of whitespace a “level of indentation” is worth
+set expandtab             " Use spaces when tabbing
 
 set autoindent
 set smartindent
@@ -61,11 +61,12 @@ hi clear SignColumn
 " NERDTree
 
 "let NERDTreeShowBookmarks = 1
-"let NERDTreeShowHidden = 1
+let NERDTreeShowHidden = 1
 "let NERDTreeShowLineNumbers = 0
 "let NERDTreeMinimalMenu = 1
 "let NERDTreeWinPos = "left"
 "let NERDTreeWinSize = 31
+let NERDTreeQuitOnOpen = 1
 "nmap        <F2>      :NERDTreeToggle<CR>
 
 " ----- jistr/vim-nerdtree-tabs -----
@@ -74,8 +75,6 @@ hi clear SignColumn
 nmap <F2> :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 " let g:nerdtree_tabs_open_on_console_startup = 1
-let NERDTreeQuitOnOpen = 1
-let NERDTreeShowHidden = 1
 
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'

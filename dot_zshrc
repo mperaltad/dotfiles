@@ -58,7 +58,7 @@ plugins=(
     colorize
     docker
     docker-compose
-    fzf
+    fzf                # **<TAB> to expand, ctrl+t search files and directories https://github.com/junegunn/fzf?tab=readme-ov-file#fuzzy-completion-for-bash-and-zsh
     github
     gnu-utils
     gradle
