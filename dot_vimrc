@@ -24,9 +24,8 @@ Plug 'matze/vim-move' " text movement functionality editor
 " ----- Files interaction ----------------------------------------------
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs' " F2 to open tab with file tree 
-Plug 'junegunn/fzf' " enables :FZF command (use :FZF! for full screen mode) CTRL-T, CTRL-X or CTRL-V to open in a new tabs, in horizontal splits, of in vertical splits respectively
-Plug 'junegunn/fzf.vim' " :Rg or :RG for search recursively :GFiles! git ls-files, :Files! fzf ctrl+t in popup, reference: https://github.com/junegunn/fzf.vim?tab=readme-ov-file#commands
-"Plug 'ctrlpvim/ctrlp.vim' " Ctrl+p Full path fuzzy file, buffer, mru, tag, ... finder
+Plug 'junegunn/fzf' " enables :FZF command (:FZF! for fullscreen) CTRL-T, CTRL-X or CTRL-V to open in a new tabs, in horizontal splits, of in vertical splits respectively
+Plug 'junegunn/fzf.vim' " :Rg or :RG for search recursively :GFiles git ls-files, :Files fzf ctrl+t in popup, use ! after for fullscreen mode e.g. :Rg! .reference: https://github.com/junegunn/fzf.vim?tab=readme-ov-file#commands
 "Plug 'dyng/ctrlsf.vim' " Pending to reasearch - advanced search
 
 " ----- Git stuff ------------------------------------------------------
