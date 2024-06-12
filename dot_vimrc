@@ -5,21 +5,22 @@
 
 set nocompatible
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged') " PlugInstall, PlugUpdate, PlugClean, PlugUpgrade, PlugDiff
 
 " ----- Look&Feel ------------------------------------------------------
 Plug 'vim-airline/vim-airline' " status/tabline for vim 
 
 " ----- Writing code ---------------------------------------------------
 Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
-Plug 'vim-syntastic/syntastic' " On-the-fly syntax checking
+" Plug 'vim-syntastic/syntastic' " On-the-fly syntax checking
 Plug 'sheerun/vim-polyglot' " Syntax help for a ton of languages
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion, syntax check based on VSCode
 Plug 'matze/vim-move' " text movement functionality editor
 " <A-k>   Move current line/selection up
 " <A-j>   Move current line/selection down
 " <A-h>   Move current character/selection left
 " <A-l>   Move current character/selection right
+Plug 'mbbill/undotree'
 
 " ----- Files interaction ----------------------------------------------
 Plug 'preservim/nerdtree'
@@ -30,7 +31,7 @@ Plug 'junegunn/fzf.vim' " :Rg or :RG for search recursively :GFiles git ls-files
 
 " ----- Git stuff ------------------------------------------------------
 Plug 'airblade/vim-gitgutter' " GIT: shows +,- or ~ next to line changed in git
-" Plugin 'tpope/vim-fugitive' " GIT: interactions with git from vim directly
+Plug 'tpope/vim-fugitive' " GIT: interactions with git from vim directly
 
 " Initialize plugin system
 call plug#end()
@@ -66,7 +67,6 @@ let NERDTreeShowHidden = 1
 "let NERDTreeWinPos = "left"
 "let NERDTreeWinSize = 31
 let NERDTreeQuitOnOpen = 1
-"nmap        <F2>      :NERDTreeToggle<CR>
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
@@ -88,3 +88,6 @@ augroup END
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" coc extensions. coc installs the missing ones once the service is started
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-java', 'coc-markdownlint', '@yaegassy/coc-mypy', 'coc-sh', 'coc-spell-checker']
