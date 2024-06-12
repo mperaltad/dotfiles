@@ -10,6 +10,107 @@
 	<string>16C9F3F9-5BAD-447D-9DCD-2AA73FBB4550</string>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>GlobalKeyMap</key>
+	<dict>
+		<key>0x19-0x60000</key>
+		<dict>
+			<key>Action</key>
+			<integer>39</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x9-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>32</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf700-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>7</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf701-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>6</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf702-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>2</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf702-0x320000</key>
+		<dict>
+			<key>Action</key>
+			<integer>33</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf703-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>0</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf703-0x320000</key>
+		<dict>
+			<key>Action</key>
+			<integer>34</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf729-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>5</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72b-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>4</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72c-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>9</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72c-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>9</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72d-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>8</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72d-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>8</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideScrollbar</key>
@@ -848,7 +949,18 @@
 			<key>HotKey Activated By Modifier</key>
 			<false/>
 			<key>HotKey Alternate Shortcuts</key>
-			<array/>
+			<array>
+				<dict>
+					<key>characters</key>
+					<string> </string>
+					<key>charactersIgnoringModifiers</key>
+					<string> </string>
+					<key>keyCode</key>
+					<integer>49</integer>
+					<key>modifiers</key>
+					<integer>262144</integer>
+				</dict>
+			</array>
 			<key>HotKey Characters</key>
 			<string></string>
 			<key>HotKey Characters Ignoring Modifiers</key>
@@ -1179,7 +1291,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Hotkey Window F12</string>
+			<string>Hotkey Window top F12 &amp; Ctrl+Space</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 12</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -1504,7 +1616,7 @@
 			<key>HotKey Window AutoHides</key>
 			<false/>
 			<key>HotKey Window Dock Click Action</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>HotKey Window Floats</key>
 			<false/>
 			<key>HotKey Window Reopens On Activation</key>
@@ -1819,7 +1931,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Hotkey Window ALTx2</string>
+			<string>Hotkey Window main ALTx2</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 12</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -1943,5 +2055,7 @@
 	<false/>
 	<key>WindowNumber</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 </dict>
 </plist>
