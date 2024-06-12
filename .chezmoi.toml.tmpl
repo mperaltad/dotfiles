@@ -1,12 +1,12 @@
-{{- $darwin_hostname = promptStringOnce . "darwin_hostname" "Darwin Host name" -}}
+{{ $darwin_hostname := "none" }}
 {{- if eq .chezmoi.os "darwin" }}
-{{- $darwin_hostname = promptStringOnce . "darwin_hostname" "Darwin Host name" -}}
+{{- $darwin_hostname = output "scutil" "--get" "ComputerName" | trim -}}
 {{- end }}
 {{- $work := promptBoolOnce . "work" "Is this a work computer or not" false -}}
+{{- $home_path := promptStringOnce . "home_path" "home path" -}}
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $git_name := promptStringOnce . "git_name" "git user name" -}}
 {{- $github_username := promptStringOnce . "github_username" "github user name" -}}
-{{/* */}}
 {{- $git_gpg_enabled := promptBoolOnce . "git_gpg_enabled" "Enable gpg git (true/false)" false -}}
 {{- $git_signingkey := "" -}}
 {{- if $git_gpg_enabled }}
@@ -29,3 +29,5 @@
     git_signingkey = {{ $git_signingkey | quote }}
 {{- end }}
     onepwd_account = {{ $onepwd_account | quote  }}
+[diff]
+    command = "delta"

@@ -1,0 +1,18 @@
+export COMPLETION_WAITING_DOTS="true"
+
+# export HISTSIZE=32768;
+# export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredups:erasedups;
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+{{- if .work }}
+{{- if eq .chezmoi.os "darwin" }}
+export HISTFILE="$HOME/Google Drive/dotfiles_work_generic/.zsh_history"
+{{- else if eq .chezmoi.os "linux" }}
+export HISTFILE="$HOME/Google Drive/dotfiles_linux/.zsh_history"
+{{- end}}
+{{- else }}
+export HISTFILE="$HOME/Google Drive/dotfiles_personal/.zsh_history"
+{{- end }}

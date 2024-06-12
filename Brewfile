@@ -1,96 +1,76 @@
+tap "1password/tap"
+tap "domt4/autoupdate"
+tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
-
-brew "gnu-indent"
-brew "gnu-which"
+tap "homebrew/services"
+tap "morantron/tmux-fingers"
+brew "ack"
 brew "autoconf"
+brew "automake"
+brew "coreutils"
+brew "bash"
+brew "bat"
+brew "chezmoi"
+brew "python@3.12"
+brew "docker-compose"
 brew "fpp"
+brew "fswatch"
+brew "fzf"
+brew "gawk"
+brew "git"
+brew "git-delta"
+brew "git-lfs"
+brew "gnu-indent"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-which"
+brew "grep"
+brew "grpcurl"
 brew "jq"
 brew "k9s"
 brew "lazydocker"
 brew "lazygit"
+brew "mas"
+brew "ncdu"
+brew "node"
+brew "nvm"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "reattach-to-user-namespace"
 brew "rename"
+brew "ripgrep"
+brew "terminal-notifier"
+brew "thefuck"
+brew "tmux"
 brew "tree"
 brew "vim"
-brew "derailed/k9s/k9s"
-
-# Search tool like grep, but optimized for programmers
-brew "ack"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
-# Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
-# Get/set bluetooth power and discoverable state
-# brew "blueutil"
-# Manage your dotfiles across multiple diverse machines, securely
-brew "chezmoi"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
-# Distributed revision control system
-brew "git"
-# Syntax-highlighting pager for git and diff output
-brew "git-delta"
-# Git extension for versioning large files
-brew "git-lfs"
-# GNU implementation of the famous stream editor
-brew "gnu-sed"
-# GNU version of the tar archiving utility
-brew "gnu-tar"
-# GNU grep, egrep and fgrep
-brew "grep"
-# Lightweight and flexible command-line JSON processor
-brew "jq"
-# Reattach process (e.g., tmux) to background
-brew "reattach-to-user-namespace"
-# Terminal multiplexer
-brew "tmux"
-# Internet file retriever
+brew "virtualenv"
 brew "wget"
-# PDF viewer
 brew "xpdf"
-# UNIX shell (command interpreter)
 brew "zsh"
-
-# Command-line helper for the 1Password password manager
-# cask "1password-cli"
-# Web browser
-# cask "google-chrome"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
-# JetBrains tools manager
-# cask "jetbrains-toolbox"
-# Knowledge base that works on top of a local folder of plain text Markdown files
-cask "obsidian"
-# Collaboration platform for API development
-# cask "postman"
-# Screenshot measurement and annotation tool
-cask "shottr"
-# Music streaming service
-cask "spotify"
-# Text editor for code, markup and prose
-cask "sublime-text"
-# Open-source code editor
-# cask "visual-studio-code"
-
-cask "caffeine"
-cask "insync"
-cask "slate"
+brew "morantron/tmux-fingers/tmux-fingers"
+cask "1password-cli"
 cask "bartender"
-cask "flycut"
+cask "caffeine"
 cask "diffmerge"
-cask "notion"
-cask "omniplan"
-#cask "stay"
-cask "alacritty"
+cask "doll"
 cask "firefox"
-#cask "zoom"
-cask "xmind"
-cask "todoist"
-
-cask "font-roboto"
+cask "flycut"
 cask "font-clear-sans"
-cask "font-roboto-mono-for-powerline"
 cask "font-droid-sans-mono-for-powerline"
+cask "font-roboto"
+cask "font-roboto-mono-for-powerline"
+cask "gray"
+cask "iterm2"
+cask "jordanbaird-ice"
+cask "karabiner-elements"
+cask "obsidian"
+cask "postman"
+cask "shottr"
+cask "slack"
+cask "spotify"
+cask "sublime-text"
+cask "todoist"
+cask "xmind"
+mas "MeetingBar", id: 1532419400
+mas "Tomato One", id: 907364780

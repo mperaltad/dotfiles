@@ -1,0 +1,33 @@
+.aws
+.ecr
+.kube
+.npm
+.nvm
+.oh-my-zsh/cache/**
+.oh-my-zsh/custom/themes/powerlevel10k/**/*.zwc
+.tmux/plugins/*
+!.tmux/plugins/tpm/
+.vim/plugged/**
+.vim/.netrwhist
+.viminfo
+.zcompdump*
+.zsh_sessions
+.config/thefuck/__pycache__/
+{{- if eq .chezmoi.os "darwin" }}
+.DS_Store
+.Trash
+Applications
+Desktop
+Documents
+Downloads
+Google Drive
+Insync
+Library
+Movies
+Music
+Pictures
+Postman
+Public
+personal_dotfiles
+projects
+{{- end }}

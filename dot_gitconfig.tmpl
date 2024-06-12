@@ -42,7 +42,7 @@
     autocrlf = input
 
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta --color-only --features=interactive
 
 [delta]
     features = line-numbers decorations
@@ -62,13 +62,6 @@
     line-numbers-right-style = cyan
     line-numbers-minus-style = 124
     line-numbers-plus-style = 28
-
-{{- if .work }}
-
-# https to ssh conversion added to make go modules work in go v1.11
-[url "ssh://git@github.com/socialpoint/"]
-    insteadOf = https://github.com/socialpoint/
-{{- end }}
 
 [push]
     default = current

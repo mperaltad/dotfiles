@@ -1,24 +1,93 @@
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+" -------------------------------------------------
+" Ideas mostly stoled from:
+" https://github.com/jez/vim-as-an-ide/tree/master
+" -------------------------------------------------
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'Shougo/deoplete.nvim'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+set nocompatible
 
-Plug 'Valloric/YouCompleteMe'
+call plug#begin('~/.vim/plugged') " PlugInstall, PlugUpdate, PlugClean, PlugUpgrade, PlugDiff
+
+" ----- Look&Feel ------------------------------------------------------
+Plug 'vim-airline/vim-airline' " status/tabline for vim 
+
+" ----- Writing code ---------------------------------------------------
+Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
+" Plug 'vim-syntastic/syntastic' " On-the-fly syntax checking
+Plug 'sheerun/vim-polyglot' " Syntax help for a ton of languages
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion, syntax check based on VSCode
+Plug 'matze/vim-move' " text movement functionality editor
+" <A-k>   Move current line/selection up
+" <A-j>   Move current line/selection down
+" <A-h>   Move current character/selection left
+" <A-l>   Move current character/selection right
+Plug 'mbbill/undotree'
+
+" ----- Files interaction ----------------------------------------------
+Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs' " F2 to open tab with file tree 
+Plug 'junegunn/fzf' " enables :FZF command (:FZF! for fullscreen) CTRL-T, CTRL-X or CTRL-V to open in a new tabs, in horizontal splits, of in vertical splits respectively
+Plug 'junegunn/fzf.vim' " :Rg or :RG for search recursively :GFiles git ls-files, :Files fzf ctrl+t in popup, use ! after for fullscreen mode e.g. :Rg! .reference: https://github.com/junegunn/fzf.vim?tab=readme-ov-file#commands
+"Plug 'dyng/ctrlsf.vim' " Pending to reasearch - advanced search
+
+" ----- Git stuff ------------------------------------------------------
+Plug 'airblade/vim-gitgutter' " GIT: shows +,- or ~ next to line changed in git
+Plug 'tpope/vim-fugitive' " GIT: interactions with git from vim directly
 
 " Initialize plugin system
 call plug#end()
 
-syntax on
+set nu                    " Enable line numbers
+syntax on                 " Enable synax highlighting
+set incsearch             " Enable incremental search
+set hlsearch              " Enable highlight search
+set splitbelow            " Always split below"
+set mouse=a               " Enable mouse drag on window splits
+set tabstop=4             " How many columns of whitespace a \t is worth
+set shiftwidth=4          " How many columns of whitespace a “level of indentation” is worth
+set expandtab             " Use spaces when tabbing
+
 set autoindent
 set smartindent
-set number
-set mouse=a
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set backspace=indent,eol,start
 filetype plugin indent on
+
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" We need this for plugins like Syntastic and vim-gitgutter which put symbols
+" in the sign column.
+hi clear SignColumn
+
+
+" NERDTree
+
+"let NERDTreeShowBookmarks = 1
+let NERDTreeShowHidden = 1
+"let NERDTreeShowLineNumbers = 0
+"let NERDTreeMinimalMenu = 1
+"let NERDTreeWinPos = "left"
+"let NERDTreeWinSize = 31
+let NERDTreeQuitOnOpen = 1
+
+" ----- jistr/vim-nerdtree-tabs -----
+" Open/close NERDTree Tabs with \t
+"nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+nmap <F2> :NERDTreeTabsToggle<CR>
+" To have NERDTree always open on startup
+" let g:nerdtree_tabs_open_on_console_startup = 1
+
+" ----- scrooloose/syntastic settings -----
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+augroup mySyntastic
+  au!
+  au FileType tex let b:syntastic_mode = "passive"
+augroup END
+
+" coc autocompletion config
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" coc extensions. coc installs the missing ones once the service is started
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-java', 'coc-markdownlint', '@yaegassy/coc-mypy', 'coc-sh', 'coc-spell-checker']
