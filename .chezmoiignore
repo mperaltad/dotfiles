@@ -12,6 +12,7 @@
 .viminfo
 .zcompdump*
 .zsh_sessions
+.config/thefuck/__pycache__/
 {{- if eq .chezmoi.os "darwin" }}
 .DS_Store
 .Trash
