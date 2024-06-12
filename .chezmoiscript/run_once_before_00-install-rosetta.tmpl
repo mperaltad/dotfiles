@@ -8,5 +8,5 @@ exit 0
 {{ template "script_caffeinate" . }}
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 {{ else }}
-echo Skipping Rosetta installation on non-M1 macs.
+echo "Skipping Rosetta installation on non-M1 macs."
 {{ end }}
