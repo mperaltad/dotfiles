@@ -1,9 +1,7 @@
 .aws
 .config/thefuck/__pycache__/
 .config/chezmoi
-.config/coc/__pycache__/
-.config/coc/extensions/*
-!.config/coc/extensions/package.json
+.config/coc/*
 .config/iterm2/sockets
 .ecr
 .kube

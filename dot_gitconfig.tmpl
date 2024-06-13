@@ -24,9 +24,9 @@
     lt = describe --tags --abbrev=0
     l = log --graph --date=short
     changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-    difff = diff --name-status
-    diffs = diff --staged
-    diffh = diff HEAD^
+    difff = difftool --name-status
+    diffs = difftool --staged
+    diffh = difftool HEAD^
     r = remote -v                    # show remotes (verbose)
     sb = "!git branch | fzf | xargs git switch"
 
