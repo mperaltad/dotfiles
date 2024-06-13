@@ -1,8 +1,11 @@
 .aws
-.config/thefuck/__pycache__/
 .config/chezmoi
-.config/coc/*
+.config/coc
 .config/iterm2/sockets
+.config/karabiner
+!.config/karabiner/karabiner.json
+.config/thefuck
+!.config/thefuck/settings.py
 .ecr
 .kube
 .npm
