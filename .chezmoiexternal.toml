@@ -1,33 +1,10 @@
-#[".oh-my-zsh"]
-#    type = "archive"
-#    url = "https://github.com/mperaltad/ohmyzsh/archive/manu.tar.gz"
-#    exact = true
-#    stripComponents = 1
-#    refreshPeriod = "168h"
-#[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
-#    type = "archive"
-#    url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
-#    exact = true
-#    stripComponents = 1
-#    refreshPeriod = "168h"
-#[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-#    type = "archive"
-#    url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
-#    exact = true
-#    stripComponents = 1
-#    refreshPeriod = "168h"
-#[".oh-my-zsh/custom/themes/powerlevel10k"]
-#    type = "archive"
-#    url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
-#    exact = true
-#    stripComponents = 1
-#refreshPeriod = "168h"
-#[".oh-my-zsh/powerline-fonts"]
-#    type = "archive"
-#    url = "https://github.com/powerline/fonts/archive/master.tar.gz"
-#    exact = true
-#    stripComponents = 1
-#    refreshPeriod = "168h"
+[".oh-my-zsh"]
+    type = "git-repo"
+    url = "https://github.com/mperaltad/ohmyzsh.git"
+    clone.args = ["--depth=1 --branch manu --single-branch"]
 [".tmux/plugins/tpm"]
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm.git"
+    clone.args = ["--depth=1"]
+    pull.args = ["--depth=1"]
+    refreshPeriod = "24h"
