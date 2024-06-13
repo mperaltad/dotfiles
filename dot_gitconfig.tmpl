@@ -26,8 +26,6 @@
     changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
     difff = diff --name-status
     diffs = diff --staged
-    diffw = diff --word-diff
-    diffws = diff --word-diff --staged
     diffh = diff HEAD^
     r = remote -v                    # show remotes (verbose)
     sb = "!git branch | fzf | xargs git switch"
@@ -40,6 +38,19 @@
     editor = vim
     pager = delta # --width 400
     autocrlf = input
+
+[diff]
+	tool = difftastic
+    external = difft
+
+[difftool]
+	prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE" --display=side-by-side-show-both --color=always
+
+[pager]
+	difftool = true
 
 [interactive]
     diffFilter = delta --color-only --features=interactive

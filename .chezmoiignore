@@ -13,7 +13,11 @@
 .zcompdump*
 .zsh_sessions
 .config/thefuck/__pycache__/
+{{- if eq .chezmoi.os "linux" }}
+Library/Applications Support/lazygit/config.yml
+{{- end }}
 {{- if eq .chezmoi.os "darwin" }}
+.config/lazygit/config.yml
 .DS_Store
 .Trash
 Applications
@@ -22,7 +26,6 @@ Documents
 Downloads
 Google Drive
 Insync
-Library
 Movies
 Music
 Pictures

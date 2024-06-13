@@ -1,0 +1,4 @@
+git:
+  paging:
+    colorArg: always
+    externalDiffCommand: difft --color=always --display=side-by-side-show-both
