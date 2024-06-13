@@ -1,4 +1,10 @@
 .aws
+.config/thefuck/__pycache__/
+.config/chezmoi
+.config/coc/__pycache__/
+.config/coc/extensions/*
+!.config/coc/extensions/package.json
+.config/iterm2/sockets
 .ecr
 .kube
 .npm
@@ -12,9 +18,8 @@
 .viminfo
 .zcompdump*
 .zsh_sessions
-.config/thefuck/__pycache__/
 {{- if eq .chezmoi.os "linux" }}
-Library/Applications Support/lazygit/config.yml
+Library
 {{- end }}
 {{- if eq .chezmoi.os "darwin" }}
 .config/lazygit/config.yml
@@ -28,6 +33,8 @@ Google Drive
 Insync
 Movies
 Music
+Library
+!Library/Applications Support/lazygit/config.yml
 Pictures
 Postman
 Public
