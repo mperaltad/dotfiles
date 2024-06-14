@@ -264,24 +264,24 @@ defaults import com.apple.symbolichotkeys ./macos-keyboard-shortcuts.xml
 set +x
 
 for app (
-	"Activity Monitor"
-	"App Store"
-	"cfprefsd"
-	"Disk Utility"
-	"Dock"
-	"Finder"
-	"Google Chrome"
-	"Image Capture"
-	"Mail"
-	"Photos"
-	"Safari"
-	"SystemUIServer"
-	"Terminal"
-	"TextEdit"
-	"Time Machine"
-	"wezterm-gui"
-	); do
-	killall "${app}" &> /dev/null && echo "Killed ${app}"
+    "Activity Monitor"
+    "App Store"
+    "cfprefsd"
+    "Disk Utility"
+    "Dock"
+    "Finder"
+    "Google Chrome"
+    "Image Capture"
+    "Mail"
+    "Photos"
+    "Safari"
+    "SystemUIServer"
+    "Terminal"
+    "TextEdit"
+    "Time Machine"
+    "wezterm-gui"
+    ); do
+    killall "${app}" &> /dev/null && echo "Killed ${app}"
 done
 
 logger "success" "Successfully set macOS defaults. Note that some changes require a logout/restart to take effect."

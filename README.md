@@ -11,6 +11,6 @@
 ## Backing up keyboard shortcuts
 
 ```
-defaults export com.apple.symbolichotkeys - > ./my-macos-keyboard-shortcuts.xml
+defaults export com.apple.symbolichotkeys - > ./macos-keyboard-shortcuts.xml
 ```
 

@@ -36,21 +36,21 @@
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
-    pager = delta # --width 400
+    pager = delta
     autocrlf = input
 
 [diff]
-	tool = difftastic
+    tool = difftastic
     external = difft
 
 [difftool]
-	prompt = false
+    prompt = false
 
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE" --display=side-by-side-show-both --color=always
 
 [pager]
-	difftool = true
+    difftool = true
 
 [interactive]
     diffFilter = delta --color-only --features=interactive

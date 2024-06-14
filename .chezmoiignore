@@ -14,18 +14,20 @@
 .oh-my-zsh/custom/themes/powerlevel10k/**/*.zwc
 .tmux/plugins/*
 !.tmux/plugins/tpm/
-.vim/plugged/**
-.vim/.netrwhist
-.viminfo
+.vim
+!.vim/autoload/plug.vim
 .zcompdump*
 .zsh_sessions
 {{- if eq .chezmoi.os "linux" }}
+.config/iterm2
 Library
 {{- end }}
 {{- if eq .chezmoi.os "darwin" }}
 .config/lazygit/config.yml
+.config/ulauncher
 .DS_Store
 .Trash
+bin
 Applications
 Desktop
 Documents
