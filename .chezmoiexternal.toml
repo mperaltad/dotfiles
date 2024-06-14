@@ -1,10 +1,13 @@
 [".oh-my-zsh"]
     type = "git-repo"
     url = "https://github.com/mperaltad/ohmyzsh.git"
-    clone.args = ["--depth=1 --branch manu --single-branch"]
 [".tmux/plugins/tpm"]
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm.git"
     clone.args = ["--depth=1"]
     pull.args = ["--depth=1"]
-    refreshPeriod = "24h"
+    refreshPeriod = "672h"
+[".vim/autoload/plug.vim"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    refreshPeriod = "672h"
