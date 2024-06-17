@@ -5,7 +5,7 @@
 1. `xcode-select --install`
 1. `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME` assuming your dotfiles repo is `github.com/$GITHUB_USERNAME/dotfiles`
 1. Sync cloud files (take a look at dot_zsh/zsh-zsh.tmpl and to dot_tmux/symlink_resurrect.tmpl)
-1. checkout manu branch of .oh-my-zsh
+1. checkout manu branch of .oh-my-zsh (my fork of oh-my-zsh with some powerups)
 1. Change shell to zsh `which zsh | sudo tee -a /etc/shells` & `chsh -s $(which zsh)`
 1. Open a tmux session and press `prefix` + `I` to fetch all the tmux plugins
 1. Install powerline fonts by executing `./install.sh` in  `~/.oh-my-zsh/powerline-fonts/`
