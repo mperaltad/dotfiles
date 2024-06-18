@@ -9,6 +9,7 @@
 1. Change shell to zsh `which zsh | sudo tee -a /etc/shells` & `chsh -s $(which zsh)`
 1. Open a tmux session and press `prefix` + `I` to fetch all the tmux plugins
 1. Install powerline fonts by executing `./install.sh` in  `~/.oh-my-zsh/powerline-fonts/`
+1. https://developer.1password.com/docs/ssh/get-started/#step-3-turn-on-the-1password-ssh-agent
 
 ## Backing up keyboard shortcuts
 
