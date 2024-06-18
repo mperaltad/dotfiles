@@ -7,6 +7,7 @@ exit 0
 {{ template "script_no_root" . }}
 {{ template "script_caffeinate" . }}
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+echo "✅ Successfully installed Rosetta on Apple Silicon Mac"
 {{ else }}
-echo "Skipping Rosetta installation on non-M1 macs."
+echo "ℹ️  Skipping Rosetta installation on non-Apple Silicon Mac"
 {{ end }}
