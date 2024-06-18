@@ -14,9 +14,7 @@ set -x
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-logger "info" "Setting macOS defaults ..."
-
-# sudo xcodebuild -license accept || true
+echo "ℹ️  Setting macOS defaults ..."
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -263,25 +261,23 @@ defaults import com.apple.symbolichotkeys ./macos-keyboard-shortcuts.xml
 ###############################################################################
 set +x
 
-for app (
-    "Activity Monitor"
-    "App Store"
-    "cfprefsd"
-    "Disk Utility"
-    "Dock"
-    "Finder"
-    "Google Chrome"
-    "Image Capture"
-    "Mail"
-    "Photos"
-    "Safari"
-    "SystemUIServer"
-    "Terminal"
-    "TextEdit"
-    "Time Machine"
-    "wezterm-gui"
-    ); do
+for app in "Activity Monitor" \ 
+    "App Store" \
+    "cfprefsd" \
+    "Disk Utility" \
+    "Dock" \
+    "Finder" \
+    "Google Chrome" \
+    "Image Capture" \
+    "Mail" \
+    "Photos" \
+    "Safari" \
+    "SystemUIServer" \
+    "Terminal" \
+    "TextEdit" \
+    "Time Machine" \
+    "wezterm-gui" ; do
     killall "${app}" &> /dev/null && echo "Killed ${app}"
 done
 
-logger "success" "Successfully set macOS defaults. Note that some changes require a logout/restart to take effect."
+echo "✅ Successfully set macOS defaults. Note that some changes require a logout/restart to take effect."

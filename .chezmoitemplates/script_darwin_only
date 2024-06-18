@@ -1,3 +1,4 @@
 {{ if ne .chezmoi.os "darwin" }}
+echo "ℹ️  Not running script only for Mac OS X"
 exit 0
 {{ end }}

@@ -27,6 +27,7 @@ Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs' " F2 to open tab with file tree 
 Plug 'junegunn/fzf' " enables :FZF command (:FZF! for fullscreen) CTRL-T, CTRL-X or CTRL-V to open in a new tabs, in horizontal splits, of in vertical splits respectively
 Plug 'junegunn/fzf.vim' " :Rg or :RG for search recursively :GFiles git ls-files, :Files fzf ctrl+t in popup, use ! after for fullscreen mode e.g. :Rg! .reference: https://github.com/junegunn/fzf.vim?tab=readme-ov-file#commands
+"Plug 'dyng/ctrlsf.vim' " Pending to reasearch - advanced search
 
 " ----- Git stuff ------------------------------------------------------
 Plug 'airblade/vim-gitgutter' " GIT: shows +,- or ~ next to line changed in git
