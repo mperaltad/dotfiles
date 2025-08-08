@@ -89,6 +89,8 @@ augroup END
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 " coc extensions. coc installs the missing ones once the service is started
-let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-java', 'coc-markdownlint', '@yaegassy/coc-mypy', 'coc-sh', 'coc-spell-checker']
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-java', 'coc-markdownlint', '@yaegassy/coc-mypy', 'coc-sh', 'coc-spell-checker', '@yaegassy/coc-ansible', 'coc-docker', 'coc-go', 'coc-jedi', 'coc-nav']
+
+autocmd VimEnter,ColorScheme * hi! link CocFloating CocHintFloat
+

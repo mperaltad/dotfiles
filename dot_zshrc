@@ -52,6 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     1password
+    archlinux
     asdf
     aws
     colored-man-pages
@@ -69,9 +70,11 @@ plugins=(
     terraform
     thefuck
     virtualenv
-    zsh-autosuggestions
     zsh-interactive-cd
+# Custom plugins from this point on (sub-modules)
+    zsh-autosuggestions
     zsh-syntax-highlighting
+    fast-syntax-highlighting
 )
 
 # User configuration
@@ -112,3 +115,5 @@ source ~/.zsh/tweaks.zsh
 source ~/.zsh/prompt.zsh
 source ~/.zsh/zsh.zsh
 # source ~/.zsh/git-prompt.zsh replaced by git-prompt plugin
+
+eval "$(starship init zsh)"

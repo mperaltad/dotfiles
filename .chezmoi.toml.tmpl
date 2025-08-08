@@ -4,6 +4,7 @@
 {{- end }}
 {{- $work := promptBoolOnce . "work" "Is this a work computer or not" false -}}
 {{- $home_path := promptStringOnce . "home_path" "home path" -}}
+{{- $google_drive_dotfiles_path := promptStringOnce . "google_drive_dotfiles_path" "Google Drive path" -}}
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $git_name := promptStringOnce . "git_name" "git user name" -}}
 {{- $github_username := promptStringOnce . "github_username" "github user name" -}}
@@ -16,6 +17,7 @@
 [data]
     work = {{ $work }}
     home_path = {{ $home_path | quote }}
+    google_drive_dotfiles_path = {{ $google_drive_dotfiles_path | quote }}
 {{- if eq .chezmoi.os "darwin" }}
     darwin_hostname = {{ $darwin_hostname | quote }}
 {{- end }}

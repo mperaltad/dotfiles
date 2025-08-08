@@ -19,7 +19,26 @@
 .zsh_sessions
 {{- if eq .chezmoi.os "linux" }}
 .config/iterm2
+.config/karabiner
+.local/state
+.steam
+.steam*
+.var
+.wine
 Library
+Bottles
+Descargas
+Documentos
+Escritorio
+Games
+Imágenes
+Insync
+Música
+Plantillas
+Público
+Vídeos
+Brewfile
+macos-keyboard-shortcuts.xml
 {{- end }}
 {{- if eq .chezmoi.os "darwin" }}
 .config/lazygit/config.yml

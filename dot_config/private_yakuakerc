@@ -1,0 +1,14 @@
+[Appearance]
+HideSkinBorders=true
+Skin=plastik_light
+Translucency=true
+
+[Dialogs]
+FirstRun=false
+
+[Window]
+KeepOpen=false
+ShowOnAllDesktops=false
+ShowTabBar=false
+ShowTitleBar=false
+Width=100
