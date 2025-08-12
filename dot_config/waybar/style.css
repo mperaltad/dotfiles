@@ -1,127 +1,116 @@
-@import "mocha.css"; 
-
+/* 全局设置 */
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 16px;
-    min-height: 0;
-    font-weight: bold;
+  font-family: "FiraCode Nerd Font";
+  font-weight: bold;
+  font-size: 14px;
+  color: #dcdfe1;
 }
 
-window#waybar {
-    background: transparent;
-    background-color: @crust;
-    color: @overlay0;
-    transition-property: background-color;
-    transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
+/* 透明 Waybar 背景 */
+#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
 }
 
-#window {
-    margin: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
+/* 所有模块统一风格 */
+#workspaces,
+#window
+{
+  /*background-color: rgba(29,31,46, 0.95);*/
+  background-color: rgba(15,27,53,0.9);
+  padding: 4px 6px; /* 保持内部间距 */
+  margin-top: 6px; /* 外部间距增加 */
+  margin-left: 6px; /* 外部间距增加 */
+  margin-right: 6px; /* 外部间距增加 */
+  border-radius: 10px;
+  border-width: 0px;
 }
 
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
+#battery,
+#custom-power{
+  background-color: rgba(15,27,53,0.9);
+  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  margin-right: 6px;
+  /*margin-bottom: 4px;*/
+  padding: 4px 2px; /* 保持内部间距 */
+  border-radius: 0 10px 10px 0;
+  border-width: 0px;
 }
 
-button:hover {
-    background: inherit;
-    color: @mauve;
-    border-top: 2px solid @mauve;
+#clock,
+#idle_inhibitor,
+#custom-lock
+{
+  background-color: rgba(15,27,53,0.9);
+  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  margin-left: 6px;
+  /*margin-bottom: 4px;*/
+  padding: 4px 2px; /* 保持内部间距 */
+  border-radius: 10px 0 0 10px;
+  border-width: 0px;
 }
 
-#workspaces button {
-    padding: 0 4px;
+#tray,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#power-profiles-daemon,
+#battery{
+  background-color: rgba(15,27,53,0.9);
+  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  /*margin-bottom: 4px;*/
+  padding: 4px 2px; /* 保持内部间距 */
+  border-width: 0px;
 }
 
-#workspaces button.focused {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: @rosewater;
-    border-top: 2px solid @rosewater;
+#pulseaudio.muted {
+  color: #FF0000;
+  padding-top: 0;
+}
+
+/* 鼠标悬停变亮一点 */
+#idle_inhibitor:hover,
+#tray:hover,
+#bluetooth:hover,
+#backlight:hover,
+#battery:hover,
+#pulseaudio:hover,
+#clock:hover,
+#power-profile-daemon:hover,
+#custom-power:hover,
+#window:hover {
+  background-color: rgba(70, 75, 90, 0.9);
+}
+
+/* 工作区激活状态高亮 */
+#workspaces button:hover{
+  background-color: rgba(97, 175, 239, 0.2);
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 10px;
 }
 
 #workspaces button.active {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: @mauve;
-    border-top: 2px solid @mauve;
+  background-color: #61afef; /* 蓝色高亮 */
+  color: #ffffff;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 10px;
 }
 
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+/* 未激活工作区按钮 */
+#workspaces button {
+  background: transparent;
+  border: none;
+  color: #888888;
+  padding: 2px 8px;
+  margin: 0 2px;
+  font-weight: bold;
 }
 
-#pulseaudio,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#wireplumber,
-#tray,
-#network,
-#mode,
-#scratchpad {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+#window {
+  font-weight: 500;
+  font-style: italic;
 }
 
-#clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
-}
-
-#clock.date {
-    color: @mauve;
-    border-bottom: 2px solid @mauve;
-}
-
-#pulseaudio {
-    color: @blue;
-    border-bottom: 2px solid @blue;
-}
-
-#network {
-    color: @yellow;
-    border-bottom: 2px solid @yellow;
-}
-
-#idle_inhibitor {
-    margin-right: 12px;
-    color: #7cb342;
-}
-
-#idle_inhibitor.activated {
-    color: @red;
-}
-
-#battery {
-    color: @green;
-    border-bottom: 2px solid @green;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-}
-
-#custom-vpn {
-    color: @lavender;
-    border-radius: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
-}
