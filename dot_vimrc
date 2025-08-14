@@ -9,10 +9,12 @@ call plug#begin('~/.vim/plugged') " PlugInstall, PlugUpdate, PlugClean, PlugUpgr
 
 " ----- Look&Feel ------------------------------------------------------
 Plug 'vim-airline/vim-airline' " status/tabline for vim 
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+Plug 'christoomey/vim-tmux-navigator'
 
 " ----- Writing code ---------------------------------------------------
 Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
-" Plug 'vim-syntastic/syntastic' " On-the-fly syntax checking
 Plug 'sheerun/vim-polyglot' " Syntax help for a ton of languages
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion, syntax check based on VSCode
 Plug 'matze/vim-move' " text movement functionality editor
@@ -20,18 +22,25 @@ Plug 'matze/vim-move' " text movement functionality editor
 " <A-j>   Move current line/selection down
 " <A-h>   Move current character/selection left
 " <A-l>   Move current character/selection right
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree' " Mapped to F5 
+Plug 'christoomey/vim-system-copy' " cp copy and cv paste from/to system
+" clipboard. cP copies the current line and cV pastes system clipboard to the
+" next line
+Plug 'ojroques/vim-oscyank' " Plugin to copy text to system clipboard
 
 " ----- Files interaction ----------------------------------------------
+Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs' " F2 to open tab with file tree 
 Plug 'junegunn/fzf' " enables :FZF command (:FZF! for fullscreen) CTRL-T, CTRL-X or CTRL-V to open in a new tabs, in horizontal splits, of in vertical splits respectively
 Plug 'junegunn/fzf.vim' " :Rg or :RG for search recursively :GFiles git ls-files, :Files fzf ctrl+t in popup, use ! after for fullscreen mode e.g. :Rg! .reference: https://github.com/junegunn/fzf.vim?tab=readme-ov-file#commands
+" 
 "Plug 'dyng/ctrlsf.vim' " Pending to reasearch - advanced search
 
 " ----- Git stuff ------------------------------------------------------
 Plug 'airblade/vim-gitgutter' " GIT: shows +,- or ~ next to line changed in git
 Plug 'tpope/vim-fugitive' " GIT: interactions with git from vim directly
+Plug 'christoomey/vim-conflicted' " Git Merge resolution (mapped to git conflicted)
 
 " Initialize plugin system
 call plug#end()
@@ -51,38 +60,46 @@ set smartindent
 set backspace=indent,eol,start
 filetype plugin indent on
 
+
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+set nocompatible
+set hidden
+set encoding=utf-8
+set showtabline=0
+nnoremap <silent><C-p> :CtrlSpace O<CR>
 
 " We need this for plugins like Syntastic and vim-gitgutter which put symbols
 " in the sign column.
 hi clear SignColumn
 
+" If you cannot change it, just embrace it
+command! Qa :qa
+command! Q :q
 
-" NERDTree
+" undotree mapped to F5
+nnoremap <F5> :UndotreeToggle<CR>
 
-"let NERDTreeShowBookmarks = 1
+" ---- FZF foo ------
+" Using F1 for Files floating and S-F1 for Full screen
+nnoremap <F1> :Files<CR>
+nnoremap <S-F1> :Files!<CR>
+" Same for RG and F3
+nnoremap <F3> :RG<CR>
+nnoremap <S-F3> :RG!<CR>
+
+" Copy/Paste system integration (cross platform in chezmoi template
+" pbcopy/pbpaste in OSX, clip/paste in W8s & xsel/wl-copy/wl-paste in Linux)
+let g:system_copy_enable_osc52 = 1
+
+" ---- NERDTree -----
 let NERDTreeShowHidden = 1
-"let NERDTreeShowLineNumbers = 0
-"let NERDTreeMinimalMenu = 1
-"let NERDTreeWinPos = "left"
-"let NERDTreeWinSize = 31
 let NERDTreeQuitOnOpen = 1
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
-"nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 nmap <F2> :NERDTreeTabsToggle<CR>
-" To have NERDTree always open on startup
-" let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_autofind = 1
-
-" ----- scrooloose/syntastic settings -----
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
-augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
-augroup END
 
 " coc autocompletion config
 " Make <CR> to accept selected completion item or notify coc.nvim to format

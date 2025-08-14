@@ -2,13 +2,11 @@
 {
     "layer": "top",
     "position": "top",
-    // "width": 1280, // Waybar width
 //    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
 //        "hyprland/language"
-//        "custom/media"
+        "custom/media"
     ],
     "modules-center": [
         "hyprland/window"
@@ -16,6 +14,7 @@
     "modules-right": [
         "idle_inhibitor",
 //        "network",
+        "custom/notification",
         "tray",
         "bluetooth",
         "pulseaudio",
@@ -57,6 +56,25 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+    "custom/notification": {
+        "format": "{icon}",
+        "format-icons": {
+          "notification": "<span foreground='red'><sup></sup></span>",
+          "none": "",
+          "dnd-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-none": "",
+          "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "inhibited-none": "",
+          "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "tray": {
         "icon-size": 14,
@@ -101,11 +119,11 @@
       }
     },
     "pulseaudio": {
-        "format": "{volume}% <span color='#00FF7F'>{icon}</span>{format_source} ",
-        "format-muted": "<span color='#FF4040'> 󰖁 </span>{format_source} ",
-        "format-bluetooth": "{volume}% <span color='#00FF7F'>{icon}</span>{format_source} ",
+        "format": "{volume}%<span color='#00FF7F'>{icon}</span>{format_source} ",
+        "format-muted": "0%<span color='#FF4040'> 󰖁 </span>{format_source} ",
+        "format-bluetooth": "{volume}%<span color='#00FF7F'>{icon}</span>{format_source} ",
         "format-bluetooth-muted": "<span color='#FF4040'> {icon}󰖁</span>{format_source} ",
-        "format-source": " | {volume}% ",
+        "format-source": " | {volume}%",
         "format-source-muted": "",
         "format-icons": {
           "headphone": "<span color='#BF00FF'> </span>",

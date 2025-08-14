@@ -18,6 +18,16 @@
 .zcompdump*
 .zsh_sessions
 {{- if eq .chezmoi.os "linux" }}
+.config/1Password
+.config/BraveSoftware
+.config/DisplayCAL
+.config/Insync
+.config/KDE
+.config/QtProject.conf
+.config/Trolltech.conf
+.config/chromium
+.config/chromium*
+.config/google-c*
 .config/iterm2
 .config/karabiner
 .local/state

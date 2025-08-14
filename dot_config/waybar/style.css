@@ -1,89 +1,97 @@
-/* 全局设置 */
 * {
   font-family: "FiraCode Nerd Font";
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   color: #dcdfe1;
 }
 
-/* 透明 Waybar 背景 */
 #waybar {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   box-shadow: none;
 }
 
-/* 所有模块统一风格 */
 #workspaces,
-#window
+#custom-media,
+#window,
+#idle_inhibitor,
+#custom-notification,
+#tray,
+#bluetooth,
+#pulseaudio,
+#power-profiles-daemon,
+#battery,
+#clock,
+#custom-power
 {
-  /*background-color: rgba(29,31,46, 0.95);*/
-  background-color: rgba(15,27,53,0.9);
-  padding: 4px 6px; /* 保持内部间距 */
-  margin-top: 6px; /* 外部间距增加 */
-  margin-left: 6px; /* 外部间距增加 */
-  margin-right: 6px; /* 外部间距增加 */
-  border-radius: 10px;
+  background-color: rgba(15,27,53,0.8);
+  margin-top: 6px;
+  padding: 4px 6px;
   border-width: 0px;
 }
 
+#workspaces,
+#custom-media,
+#window,
+#battery
+{
+  padding: 4px 8px;
+  border-radius: 10px; 
+}
+
+#workspaces,
+#custom-media
+{
+  margin-left: 6px
+}
+
 #battery,
-#custom-power{
-  background-color: rgba(15,27,53,0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
+#custom-power
+{
   margin-right: 6px;
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
-  border-radius: 0 10px 10px 0;
-  border-width: 0px;
+}
+
+#battery,
+#custom-power
+{
+  border-radius: 0 10px 10px 0; 
 }
 
 #clock,
 #idle_inhibitor,
 #custom-lock
 {
-  background-color: rgba(15,27,53,0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
-  margin-left: 6px;
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
   border-radius: 10px 0 0 10px;
-  border-width: 0px;
 }
 
-#tray,
-#bluetooth,
-#pulseaudio,
-#backlight,
-#power-profiles-daemon,
-#battery{
-  background-color: rgba(15,27,53,0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
-  border-width: 0px;
+#custom-notification
+{
+  padding-right: 8px
 }
 
 #pulseaudio.muted {
   color: #FF0000;
-  padding-top: 0;
 }
 
-/* 鼠标悬停变亮一点 */
+#window {
+  font-weight: 500;
+  font-style: italic;
+}
+
 #idle_inhibitor:hover,
 #tray:hover,
+#custom-notification:hover,
 #bluetooth:hover,
 #backlight:hover,
 #battery:hover,
 #pulseaudio:hover,
 #clock:hover,
-#power-profile-daemon:hover,
+#power-profiles-daemon:hover,
 #custom-power:hover,
 #window:hover {
   background-color: rgba(70, 75, 90, 0.9);
 }
 
-/* 工作区激活状态高亮 */
 #workspaces button:hover{
   background-color: rgba(97, 175, 239, 0.2);
   padding: 2px 8px;
@@ -92,14 +100,13 @@
 }
 
 #workspaces button.active {
-  background-color: #61afef; /* 蓝色高亮 */
+  background-color: #61afef;
   color: #ffffff;
   padding: 2px 8px;
   margin: 0 2px;
   border-radius: 10px;
 }
 
-/* 未激活工作区按钮 */
 #workspaces button {
   background: transparent;
   border: none;
@@ -109,8 +116,4 @@
   font-weight: bold;
 }
 
-#window {
-  font-weight: 500;
-  font-style: italic;
-}
 
