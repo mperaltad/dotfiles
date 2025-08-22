@@ -19,14 +19,17 @@
 #tray,
 #bluetooth,
 #pulseaudio,
+#backlight,
+#systemd-failed-units,
 #power-profiles-daemon,
+#custom-asus_control,
 #battery,
 #clock,
 #custom-power
 {
   background-color: rgba(15,27,53,0.8);
   margin-top: 6px;
-  padding: 4px 6px;
+  padding: 4px;
   border-width: 0px;
 }
 
@@ -64,18 +67,20 @@
   border-radius: 10px 0 0 10px;
 }
 
-#custom-notification
+#custom-notification,
+#backlight,
+#custom-asus_control,
+#power-profiles-daemon
 {
-  padding-right: 8px
+  padding-right: 10px
+}
+
+#window {
+  font-style: italic;
 }
 
 #pulseaudio.muted {
   color: #FF0000;
-}
-
-#window {
-  font-weight: 500;
-  font-style: italic;
 }
 
 #idle_inhibitor:hover,
@@ -85,7 +90,9 @@
 #backlight:hover,
 #battery:hover,
 #pulseaudio:hover,
+#backlight:hover,
 #clock:hover,
+#custom-asus_control:hover,
 #power-profiles-daemon:hover,
 #custom-power:hover,
 #window:hover {

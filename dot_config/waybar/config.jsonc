@@ -18,8 +18,9 @@
         "tray",
         "bluetooth",
         "pulseaudio",
-//        "backlight",
-        "power-profiles-daemon",
+        "backlight",
+        "systemd-failed-units",
+        "custom/asus_control",
         "battery",
         "clock",
         "custom/power"
@@ -97,26 +98,22 @@
         "scroll-step": 5
     },
     "battery": {
-      "states": {
-        "warning": 20,
-        "critical": 10
-      },
-      "format": "<span color='#28CD41'>{icon} </span>{capacity}% ",
-      "format-charging": "{icon} 󱐋{capacity}% ",
-      "interval": 30,
-      "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
-      "tooltip": true
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "<span color='#28CD41'>{icon} </span>{capacity}% ({power:.2f}W)",
+        "format-charging": "{icon} 󱐋{capacity}% ({power:.2f}W)",
+        "full-at": 97,
+        "interval": 30,
+        "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+        "tooltip": true
     },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+    "systemd-failed-units": {
+        "format": "✗ {nr_failed}",
+        "format-ok": "",
+        "system": true, // Monitor failed systemwide units.
+        "user": false // Ignore failed user units.
     },
     "pulseaudio": {
         "format": "{volume}%<span color='#00FF7F'>{icon}</span>{format_source} ",
@@ -164,6 +161,15 @@
 			"hibernate": "systemctl hibernate"
 		}
     }, 
+    "custom/asus_control": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": 30,
+        "exec": "~/.config/waybar/custom_modules/asus_control.sh",
+        "tooltip": true,
+        "on-click": "~/.config/waybar/custom_modules/asus_control_menu.sh",
+        "signal": 8
+    },
     "bluetooth": {
         "format": "<span color='#00BFFF'>  </span> ",
         "format-connected": "<span color='#00BFFF'>  </span>{num_connections} ",

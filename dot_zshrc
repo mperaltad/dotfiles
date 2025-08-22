@@ -75,3 +75,5 @@ source ~/.zsh/zsh.zsh
 # source ~/.zsh/git-prompt.zsh replaced by git-prompt plugin
 
 eval "$(starship init zsh)"
+
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
