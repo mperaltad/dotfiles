@@ -10,7 +10,8 @@ call plug#begin('~/.vim/plugged') " PlugInstall, PlugUpdate, PlugClean, PlugUpgr
 " ----- Look&Feel ------------------------------------------------------
 Plug 'vim-airline/vim-airline' " status/tabline for vim 
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Yggdroot/indentLine'
 
@@ -71,7 +72,7 @@ set showtabline=0
 nnoremap <silent><C-p> :CtrlSpace O<CR>
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'catppuccin_mocha'
+let g:airline_theme = 'catppuccin_macchiato'
 hi CtrlSpaceSearch guifg=#cb4b16 guibg=#000000 gui=bold ctermfg=9 ctermbg=0 term=bold cterm=bold
 hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
 hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
@@ -109,6 +110,10 @@ let NERDTreeQuitOnOpen = 1
 " Open/close NERDTree Tabs with \t
 nmap <F2> :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_autofind = 1
+
+" Obsession adding status icons instead of defaults
+let g:airline#extensions#obsession#indicator_text="󰆓"
+let g:airline#extensions#obsession#indicator_text_paused="󱙄"
 
 " coc autocompletion config
 " Make <CR> to accept selected completion item or notify coc.nvim to format

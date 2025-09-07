@@ -23,6 +23,7 @@
 #systemd-failed-units,
 #power-profiles-daemon,
 #custom-asus_control,
+#temperature,
 #battery,
 #clock,
 #custom-power
@@ -70,6 +71,7 @@
 #custom-notification,
 #backlight,
 #custom-asus_control,
+#temperature,
 #power-profiles-daemon
 {
   padding-right: 10px
@@ -88,12 +90,13 @@
 #custom-notification:hover,
 #bluetooth:hover,
 #backlight:hover,
-#battery:hover,
 #pulseaudio:hover,
 #backlight:hover,
 #clock:hover,
 #custom-asus_control:hover,
 #power-profiles-daemon:hover,
+#temperature:hover,
+#battery:hover,
 #custom-power:hover,
 #window:hover {
   background-color: rgba(70, 75, 90, 0.9);

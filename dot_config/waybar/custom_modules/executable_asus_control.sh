@@ -1,5 +1,10 @@
 #!/bin/bash
 
+eco_manu_mode=""
+if [[ "$(hyprctl -j getoption animations:enabled | jq -r '.int')" != "0" ]]; then
+    eco_manu_mode="󱐋"
+fi
+
 # Get graphics mode
 graphics_mode=$(supergfxctl -g 2>/dev/null)
 case "$graphics_mode" in
@@ -32,4 +37,5 @@ case "$profile" in
 esac
 
 # Output in JSON format for waybar
-echo "{\"text\": \"$graphics  $perf\", \"tooltip\": \"Graphics: $graphics\nProfile: $perf\"}"
+echo "{\"text\": \"$eco_manu_mode $graphics $perf\", \"tooltip\": \"EcoManu: $eco_manu_mode Graphics: $graphics\nProfile: $perf\"}"
+

@@ -1,0 +1,11 @@
+[Keyboard]
+KeyRepeat=repeat
+NumLock=0
+RepeatDelay=250
+RepeatRate=25
+
+[Libinput][1267][12440][ELAN1201:00 04F3:3098 Touchpad]
+ClickMethod=2
+
+[Mouse]
+cursorTheme=catppuccin-mocha-dark-cursors

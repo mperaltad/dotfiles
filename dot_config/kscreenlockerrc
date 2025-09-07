@@ -1,0 +1,11 @@
+[Daemon]
+Autolock=true
+LockGrace=30
+Timeout=20
+
+[Greeter]
+Theme=Sweet
+WallpaperPlugin=org.kde.image
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/usr/share/wallpapers/garuda-wallpapers/Malefor.jpg

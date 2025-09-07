@@ -1,6 +1,6 @@
 modmap:
   - name: home-to-angle-brackets
-    device:
-      only: ['Keychron K6']
+#    device:
+#      only: ['Keychron K6']
     remap:
       Home: KEY_102ND # Mapped Home to < in spanish layout for Keychron K6

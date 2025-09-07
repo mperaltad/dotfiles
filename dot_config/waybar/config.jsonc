@@ -21,6 +21,7 @@
         "backlight",
         "systemd-failed-units",
         "custom/asus_control",
+        "temperature",
         "battery",
         "clock",
         "custom/power"
@@ -29,7 +30,7 @@
         "disable-scroll": false,
         "all-outputs": true,
 //        "format": "{icon}",
-        "on-click": "activate",
+        "on-click": "activate"
 //        "persistent-workspaces": {
 //        "*":[1,2,3,4,5,6,7,8,9]
 //        },
@@ -50,7 +51,7 @@
     //         "default": ""
     //         "3": "",
 //        }
-	 },
+	},
     "idle_inhibitor": {
         "format": "  {icon}  ",
         "format-icons": {
@@ -79,17 +80,7 @@
     },
     "tray": {
         "icon-size": 14,
-        "spacing": 10,
-    },
-    "clock": {
-        "format": " <span color='#BF00FF'>  </span>{:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%Y-%m-%d}",
-		"calendar": {
-			"format": {
-				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-			}
-		}
+        "spacing": 10
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -149,13 +140,34 @@
         "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+    "clock": {
+        "format": " <span color='#BF00FF'>  </span>{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%Y-%m-%d}",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                      "months":     "<span color='#ffead3'><b>{}</b></span>",
+                      "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                      "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                      "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                      "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode"
+        }
+    },
     "custom/power": {
         "format" : " ⏻  ",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/custom_modules/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
+			"shutdown": "shutdown -h now",
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"

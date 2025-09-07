@@ -1,0 +1,9 @@
+[Battery][SuspendAndShutdown]
+AutoSuspendIdleTimeoutSec=300
+
+[BatteryManagement]
+BatteryLowLevel=20
+
+[LowBattery][Keyboard]
+KeyboardBrightness=10
+UseProfileSpecificKeyboardBrightness=true

@@ -1,15 +1,17 @@
 #!/bin/bash
 
 # Define the menu options with icons
+ECO=" Eco ManuMode"
 PERFORMANCE="󰓅 Performance Mode"
 BALANCED="󰾅 Balanced Mode"
 QUIET="󰾆 Quiet Mode"
 SEPARATOR="─────────────────────"
 INTEGRATED="󰢮 Integrated GPU Mode"
 HYBRID="󰢹 Hybrid GPU Mode"
+HYBRID="󰢹 Hybrid GPU Mode"
 
 # Show menu with rofi
-chosen=$(printf "%s\n%s\n%s\n%s\n%s\n%s\n%s" "$PERFORMANCE" "$BALANCED" "$QUIET" "$INTEGRATED" "$HYBRID" "$DEDICATED" \
+chosen=$(printf "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s" "$ECO" "$PERFORMANCE" "$BALANCED" "$QUIET" "$INTEGRATED" "$HYBRID" "$DEDICATED" \
     | rofi -dmenu -i -p "ASUS Control Center" \
     -theme-str '
     * {
@@ -55,19 +57,30 @@ chosen=$(printf "%s\n%s\n%s\n%s\n%s\n%s\n%s" "$PERFORMANCE" "$BALANCED" "$QUIET"
 
 # Handle selection and refresh waybar
 case $chosen in
+    "$ECO")
+        hyprctl reload;
+        ~/.config/hypr/battery-save.sh; # remove hyprland energy draining features
+        asusctl profile -P Quiet;
+        supergfxctl -m Integrated;
+        pkill -SIGRTMIN+8 waybar ;;
     "$PERFORMANCE")
+        hyprctl reload; # back to default values
         asusctl profile -P Performance
         pkill -SIGRTMIN+8 waybar ;;
     "$BALANCED")
+        hyprctl reload;
         asusctl profile -P Balanced
         pkill -SIGRTMIN+8 waybar ;;
     "$QUIET")
+        hyprctl reload;
         asusctl profile -P Quiet
         pkill -SIGRTMIN+8 waybar ;;
     "$INTEGRATED")
+        hyprctl reload;
         supergfxctl -m Integrated
         pkill -SIGRTMIN+8 waybar ;;
     "$HYBRID")
+        hyprctl reload;
         supergfxctl -m Hybrid
         pkill -SIGRTMIN+8 waybar ;;
 esac

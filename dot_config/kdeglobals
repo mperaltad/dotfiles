@@ -139,8 +139,7 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x86\
 
 [General]
 BrowserApplication=google-chrome.desktop
-ColorScheme=Scratchy
-ColorSchemeHash=853de0deb7acafcf9b389a7b478f952ec1d711e2
+ColorSchemeHash=34bd8bad1192a8d612892100d65539ea91e87b50
 XftHintStyle=hintslight
 XftSubPixel=none
 fixed=FiraCode Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
@@ -150,7 +149,7 @@ smallestReadableFont=FiraCode Nerd Font,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 toolBarFont=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
-Theme=Catppuccin-Mocha-Alt
+Theme=breeze-dark
 
 [KDE]
 LookAndFeelPackage=Scratchy
@@ -177,6 +176,9 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=142
 View Style=DetailTree
+
+[Shortcuts]
+FullScreen=F11; Ctrl+Shift+F
 
 [Sounds]
 Theme=freedesktop
