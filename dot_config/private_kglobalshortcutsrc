@@ -3,7 +3,9 @@ _k_friendly_name=Activity Manager
 switch-to-activity-d2db5f6a-3aca-4e92-bd6f-32ca163f14fd=none,none,Switch to activity "Por omisión"
 
 [KDE Keyboard Layout Switcher]
-Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Keyboard Layout
+Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
+Switch keyboard layout to Spanish=none,none,Switch keyboard layout to Spanish
+Switch to Last-Used Keyboard Layout=none,Meta+Alt+L,Switch to Last-Used Keyboard Layout
 Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
@@ -356,10 +358,10 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 16=none,none,Activate Keyboard Layout Widget
 activate widget 27=none,none,Activate Application Launcher Widget
 activate widget 31=none,none,Activate Application Launcher Widget
 activate widget 32=none,none,Activate Camera Indicator Widget
-activate widget 42=Meta+Ctrl+Alt+T,none,Activate Timer Widget
 activate widget 45=none,none,Activate Pager Widget
 clear-history=none,,Clear Clipboard History
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu

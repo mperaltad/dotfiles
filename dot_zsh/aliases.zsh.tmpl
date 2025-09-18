@@ -71,4 +71,8 @@ alias cm="chezmoi"
 alias order='sort | uniq -c | sort -nr'
 alias rg='rg --hidden --glob "!.git/*" --glob "!node_modules/*" --glob "!.cache/*" --glob "!.local/*"'
 alias less='less -R'
+{{- if eq .chezmoi.os "linux" }}
 alias wl-paste="wl-paste --type='text/plain;charset=utf-8'"
+alias restart-kde="systemctl --user restart plasma-plasmashell"
+alias restart-krohnkite='qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript "krohnkite"; qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.start'
+{{- end }}
