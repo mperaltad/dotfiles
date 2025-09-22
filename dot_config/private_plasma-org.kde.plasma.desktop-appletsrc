@@ -6,7 +6,7 @@ RightButton;NoModifier=org.kde.contextmenu
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
-ItemGeometries-1829x1029=Applet-50:1715.15,288,448,448,0;
+ItemGeometries-1829x1029=
 ItemGeometries-2560x1440=
 ItemGeometriesHorizontal=
 activityId=d2db5f6a-3aca-4e92-bd6f-32ca163f14fd
@@ -35,7 +35,7 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][31][Configuration]
 PreloadWeight=100
-popupHeight=492
+popupHeight=494
 popupWidth=675
 
 [Containments][2][Applets][31][Configuration][ConfigDialog]
@@ -81,7 +81,7 @@ immutability=1
 plugin=com.dv.fokus
 
 [Containments][2][Applets][48][Configuration]
-PreloadWeight=70
+PreloadWeight=95
 popupHeight=322
 popupWidth=324
 
@@ -204,9 +204,6 @@ plugin=org.kde.plasma.keyboardlayout
 DialogHeight=540
 DialogWidth=720
 
-[Containments][2][Applets][9][Applets][16][Configuration][General]
-displayStyle=LabelOverFlag
-
 [Containments][2][Applets][9][Applets][17]
 immutability=1
 plugin=org.kde.plasma.manage-inputmethod
@@ -241,7 +238,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2][Applets][9][Applets][24][Configuration]
-PreloadWeight=46
+PreloadWeight=57
 
 [Containments][2][Applets][9][Applets][24][Configuration][General]
 showPercentage=true
@@ -251,14 +248,14 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][2][Applets][9][Applets][25][Configuration]
-PreloadWeight=5
+PreloadWeight=15
 
 [Containments][2][Applets][9][Applets][26]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][9][Applets][26][Configuration]
-PreloadWeight=100
+PreloadWeight=94
 
 [Containments][2][Applets][9][Applets][26][Configuration][General]
 showNumberOfConnectedDevices=true
@@ -346,4 +343,4 @@ positions={"2560x1440":[]}
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/steam.desktop,0,d2db5f6a-3aca-4e92-bd6f-32ca163f14fd,desktop:/Ubisoft Connect.lnk,0,d2db5f6a-3aca-4e92-bd6f-32ca163f14fd,desktop:/Epic Games Launcher.lnk,0,d2db5f6a-3aca-4e92-bd6f-32ca163f14fd
+screenMapping=desktop:/Epic Games Launcher.lnk,0,d2db5f6a-3aca-4e92-bd6f-32ca163f14fd,desktop:/Ubisoft Connect.lnk,0,d2db5f6a-3aca-4e92-bd6f-32ca163f14fd,desktop:/steam.desktop,0,d2db5f6a-3aca-4e92-bd6f-32ca163f14fd

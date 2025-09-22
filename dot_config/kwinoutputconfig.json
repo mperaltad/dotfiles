@@ -23,7 +23,7 @@
                 },
                 "overscan": 0,
                 "rgbRange": "Automatic",
-                "scale": 1.4,
+                "scale": 1.2,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
                 "transform": "Normal",
@@ -104,7 +104,6 @@
                 "edrPolicy": "always",
                 "highDynamicRange": false,
                 "iccProfilePath": "",
-                "maxBitsPerColor": 0,
                 "mode": {
                     "height": 1440,
                     "refreshRate": 59951,

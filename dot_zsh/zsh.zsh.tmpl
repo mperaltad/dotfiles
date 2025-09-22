@@ -11,7 +11,7 @@ setopt HIST_SAVE_NO_DUPS
 {{- if eq .chezmoi.os "darwin" }}
 export HISTFILE="$HOME/Google Drive/dotfiles_work_generic/.zsh_history"
 {{- else if eq .chezmoi.os "linux" }}
-export HISTFILE="$HOME/Google Drive/dotfiles_linux/.zsh_history"
+export HISTFILE="{{ .google_drive_dotfiles_path }}.zsh_history"
 {{- end}}
 {{- else }}
 export HISTFILE="{{ .google_drive_dotfiles_path }}.zsh_history"

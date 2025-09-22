@@ -33,7 +33,6 @@ plugins=(
 # Custom plugins from this point on (sub-modules)
     zsh-autosuggestions
     zsh-syntax-highlighting
-    fast-syntax-highlighting
 )
 
 # User configuration
@@ -71,8 +70,8 @@ export EDITOR='vim'
 source ~/.zsh/aliases.zsh
 source ~/.zsh/exports.zsh
 source ~/.zsh/prompt.zsh
+source ~/.zsh/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh.zsh
-# source ~/.zsh/git-prompt.zsh replaced by git-prompt plugin
 
 eval "$(starship init zsh)"
 

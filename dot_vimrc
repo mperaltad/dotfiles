@@ -29,9 +29,11 @@ Plug 'christoomey/vim-system-copy' " cp copy and cv paste from/to system
 " clipboard. cP copies the current line and cV pastes system clipboard to the
 " next line
 Plug 'ojroques/vim-oscyank' " Plugin to copy text to system clipboard
+Plug 'junegunn/vim-peekaboo' " Register contents on the sidebar when hitting \" or @ in normal mode or <CTRL-R> in insert mode
+ 
 
 " ----- Files interaction ----------------------------------------------
-Plug 'vim-ctrlspace/vim-ctrlspace'
+"Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs' " F2 to open tab with file tree 
 Plug 'junegunn/fzf' " enables :FZF command (:FZF! for fullscreen) CTRL-T, CTRL-X or CTRL-V to open in a new tabs, in horizontal splits, of in vertical splits respectively
@@ -68,16 +70,17 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 set nocompatible
 set hidden
 set encoding=utf-8
-set showtabline=0
-nnoremap <silent><C-p> :CtrlSpace O<CR>
+"set showtabline=0
+"nnoremap <silent><C-p> :CtrlSpace O<CR>
+"hi CtrlSpaceSearch guifg=#cb4b16 guibg=#000000 gui=bold ctermfg=9 ctermbg=0 term=bold cterm=bold
+"hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
+"hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
+"hi CtrlSpaceFound    ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold gui=bold
+"hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE gui=NONE
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'catppuccin_macchiato'
-hi CtrlSpaceSearch guifg=#cb4b16 guibg=#000000 gui=bold ctermfg=9 ctermbg=0 term=bold cterm=bold
-hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
-hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
-hi CtrlSpaceFound    ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold gui=bold
-hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE gui=NONE
+" Making default peekaboo (the plugin that shows the register history) a bit
+" bigger than by default
+let g:peekaboo_window = 'vert bo 50new'
 
 " We need this for plugins like Syntastic and vim-gitgutter which put symbols
 " in the sign column.
@@ -87,9 +90,6 @@ hi clear SignColumn
 command! Qa :qa
 command! Q :q
 
-" undotree mapped to F5
-nnoremap <F5> :UndotreeToggle<CR>
-
 " ---- FZF foo ------
 " Using F1 for Files floating and S-F1 for Full screen
 nnoremap <F1> :Files<CR>
@@ -97,6 +97,15 @@ nnoremap <S-F1> :Files!<CR>
 " Same for RG and F3
 nnoremap <F3> :RG<CR>
 nnoremap <S-F3> :RG!<CR>
+" Open Buffers and F4
+nnoremap <F4> :Buffers<CR>
+nnoremap <S-F4> :Buffers!<CR>
+" Vim commands history F7
+nnoremap <F7> :History:<CR>
+nnoremap <S-F7> :History:!<CR>
+
+" undotree mapped to F5
+nnoremap <F5> :UndotreeToggle<CR>
 
 " Copy/Paste system integration (cross platform in chezmoi template
 " pbcopy/pbpaste in OSX, clip/paste in W8s & xsel/wl-copy/wl-paste in Linux)
@@ -112,6 +121,8 @@ nmap <F2> :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_autofind = 1
 
 " Obsession adding status icons instead of defaults
+let g:airline_theme = 'catppuccin_macchiato'
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#obsession#indicator_text="󰆓"
 let g:airline#extensions#obsession#indicator_text_paused="󱙄"
 
