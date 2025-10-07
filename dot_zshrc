@@ -9,6 +9,7 @@ plugins=(
     1password
     archlinux
     asdf
+    aws
     chezmoi
     colored-man-pages
     colorize
@@ -23,6 +24,7 @@ plugins=(
     kubectl
     localstack
     pip
+    pyenv
     python
     redis-cli
     rsync

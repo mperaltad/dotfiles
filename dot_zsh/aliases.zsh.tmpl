@@ -24,7 +24,7 @@ alias gc="git checkout"
 alias gpom="git pull origin master"
 alias gcom="git checkout master"
 alias gmaster="git fetch origin; git checkout master; git pull origin master"
-alias gm="git fetch origin; git checkout master; git pull origin master"
+alias gmain="git fetch origin; git checkout main; git pull origin main"
 alias gfo="git fetch origin"
 alias gf="git fuzzy"
 alias gfs="git fuzzy status"
@@ -47,6 +47,7 @@ alias tmuxkillsession0andattachtopsession='tmux kill-session -t 0; tmux attach -
 alias tmuxinstallplugins='~/.tmux/plugins/tpm/bin/install_plugins'
 alias tmuxupdateplugins='~/.tmux/plugins/tpm/bin/update_plugins'
 alias tmuxrc='tmux source ~/.tmux.conf'
+alias tmux-layout-copy="tmux display-message -p '#{window_layout}' | tee >(tr -d '\n' | pbcopy)"
 
 # JetBrains
 ##############
@@ -61,18 +62,16 @@ alias p.="~/Library/Application\ Support/JetBrains/Toolbox/scripts/pycharm ."
 alias w.="~/Library/Application\ Support/JetBrains/Toolbox/scripts/webstorm ."
 {{- end }}
 
-# Hyprland
-############
-alias waybar-restart='killall waybar; waybar &'
-
 # Misc
 ############
 alias cm="chezmoi"
 alias order='sort | uniq -c | sort -nr'
+alias count='sort | uniq -c | sort -nr'
 alias rg='rg --hidden --glob "!.git/*" --glob "!node_modules/*" --glob "!.cache/*" --glob "!.local/*"'
 alias less='less -R'
 {{- if eq .chezmoi.os "linux" }}
 alias wl-paste="wl-paste --type='text/plain;charset=utf-8'"
 alias restart-kde="systemctl --user restart plasma-plasmashell"
 alias restart-krohnkite='qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript "krohnkite"; qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.start'
+alias waybar-restart='killall waybar; waybar &'
 {{- end }}

@@ -1,5 +1,4 @@
-
-
 # Added by Toolbox App
-export PATH="$PATH:/Users/manuperalta/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$PATH:/Users/manuelperalta/Library/Application Support/JetBrains/Toolbox/scripts"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
