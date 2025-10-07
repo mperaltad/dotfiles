@@ -74,7 +74,30 @@ Brewfile
 macos-keyboard-shortcuts.xml
 {{- end }}
 {{- if eq .chezmoi.os "darwin" }}
+.config/autostart
+.config/boxtron.conf
+.config/corectrl
+.config/dolphinrc
+.config/fontconfig
+.config/gtk-3.0
+.config/gtk-4.0
+.config/gtkrc-2.0
+.config/hypr
+.config/kcminputrc
+.config/kde*
+.config/kglobalshortcutsrc
+.config/klipperrc
+.config/konsolerc
+.config/krunnerrc
+.config/kscreenlockerrc
+.config/ktimezonedrc
+.config/kwin*
 .config/lazygit/config.yml
+.config/libinput-gestures.conf
+.config/pavucontrol.ini
+.config/plasma*
+.config/power*
+.config/psd*
 .config/ulauncher
 .DS_Store
 .Trash
