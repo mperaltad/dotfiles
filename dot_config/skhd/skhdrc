@@ -1,0 +1,52 @@
+# Change space to tiled and non-tiled layout
+lalt - y 			: yabai -m space --layout bsp
+shift + lalt - y 	: yabai -m space --layout float
+
+# Float / Unfloat window
+lalt - f : yabai -m window --toggle zoom-parent 
+
+# Toggle split orientation of the selected windows node
+shift + lalt - s : yabai -m window --toggle split
+
+# Balance windows on the space
+shift + lalt - 0 : yabai -m space --balance
+
+# Make window zoom to fullscreen
+shift + lalt - f : yabai -m window --toggle zoom-fullscreen
+
+# Window navigation (through display borders)
+lcmd - h   	  : yabai -m window --focus west  || yabai -m display --focus west
+lcmd - j   	  : yabai -m window --focus south || yabai -m display --focus south
+lcmd - k   	  : yabai -m window --focus north || yabai -m display --focus north
+lcmd - l   	  : yabai -m window --focus east  || yabai -m display --focus east
+ctrl - left   : yabai -m window --focus west  || yabai -m display --focus west
+ctrl - down   : yabai -m window --focus south || yabai -m display --focus south
+ctrl - up     : yabai -m window --focus north || yabai -m display --focus north
+ctrl - right  : yabai -m window --focus east  || yabai -m display --focus east
+
+# Moving windows between spaces: lcmd - {1, 2, 3, 4, 5}
+lalt - 1 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[1] ]] \
+                  && yabai -m window --space $SPACES[1]
+lalt - 2 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[2] ]] \
+                  && yabai -m window --space $SPACES[2]
+lalt - 3 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[3] ]] \
+                  && yabai -m window --space $SPACES[3]
+lalt - 4 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[4] ]] \
+                  && yabai -m window --space $SPACES[4]
+lalt - 5 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[5] ]] \
+                  && yabai -m window --space $SPACES[5]
+lalt - 6 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[6] ]] \
+                  && yabai -m window --space $SPACES[6]
+
+# Resize windows
+ctrl + shift - left		: yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
+ctrl + shift - up    	: yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
+ctrl + shift - down    	: yabai -m window --resize bottom:0:-100 || yabai -m window --resize top:0:-100
+ctrl + shift - right 	: yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
+
+# Swap windows
+ctrl + lalt - left 	: yabai -m window --warp west || $(yabai -m window --display west && yabai -m display --focus west && yabai -m window --warp last) || yabai -m window --move rel:-10:0
+ctrl + lalt - down 	: yabai -m window --warp south || $(yabai -m window --display south && yabai -m display --focus south) || yabai -m window --move rel:0:10
+ctrl + lalt - up 	: yabai -m window --warp north || $(yabai -m window --display north && yabai -m display --focus north) || yabai -m window --move rel:0:-10
+ctrl + lalt - right : yabai -m window --warp east || $(yabai -m window --display east && yabai -m display --focus east && yabai -m window --warp first) || yabai -m window --move rel:10:0
+

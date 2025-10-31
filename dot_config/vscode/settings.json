@@ -1,0 +1,122 @@
+{
+  // Debug:
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.javascript.codelens.npmScripts": "never",
+  "debug.console.closeOnEnd": true,
+
+
+  // Editor:
+  "editor.showFoldingControls": "mouseover",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontFamily": "FiraCode Nerd Font, Menlo, monospace",
+  "editor.fontLigatures": true,
+  "explorer.openEditors.visible": 1,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "selection",
+  "editor.renderLineHighlight": "none",
+  "explorer.compactFolders": false,
+  "editor.rulers": [80, 100],
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.iconTheme": "catppuccin-macchiato",
+
+  // Per-language UI settings:
+  "[css]": {
+    "editor.colorDecorators": true,
+  },
+  "[jsonc]": {  // for vscode theme editing
+    "editor.colorDecorators": true,
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+
+    // ── Node.js / JavaScript / TypeScript ────────
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": false,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.validate": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Files:
+  "files.associations": {
+    ".babelrc": "jsonc",
+    ".eslintrc": "jsonc",
+    "*.pyi": "python",
+    "*.bats": "shellscript",
+  },
+  "files.autoSave": "afterDelay",
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+
+    "**/node_modules": true,
+    "**/bower_components": true,
+
+    "**/__pycache__": true,
+    "**/.cache": true,
+    "**/.idea": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.venv": true,
+    "**/.coverage": true,
+    "**/*.py[co]": true,
+    "**/htmlcoverage": true,
+    "**/docs/build": true,
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+  },
+
+  // Stats and telemetry:
+  "telemetry.telemetryLevel": "off",
+
+  // Terminal:
+  "terminal.integrated.defaultLocation": "editor",
+//  "terminal.integrated.shellIntegration.enabled": false,
+//  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+//  "terminal.integrated.stickyScroll.enabled": false,
+//  "terminal.integrated.suggest.enabled": false,
+//  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "accessibility.signals.terminalBell": {
+    "sound": "off",
+    "announcement": "off",
+  },
+  "terminal.integrated.enableVisualBell": true,
+  "terminal.integrated.fontLigatures.enabled": false,
+  "terminal.integrated.cursorBlinking": true,
+
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.sendKeybindingsToShell": true,
+
+  // Main editor:
+  "window.newWindowDimensions": "maximized",
+
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+}
