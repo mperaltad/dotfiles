@@ -166,6 +166,7 @@ format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+pyenv_version_name = true
 
 [docker_context]
 symbol = ""
