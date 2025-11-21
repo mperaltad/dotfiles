@@ -15,10 +15,6 @@ shift + lalt - 0 : yabai -m space --balance
 shift + lalt - f : yabai -m window --toggle zoom-fullscreen
 
 # Window navigation (through display borders)
-lcmd - h   	  : yabai -m window --focus west  || yabai -m display --focus west
-lcmd - j   	  : yabai -m window --focus south || yabai -m display --focus south
-lcmd - k   	  : yabai -m window --focus north || yabai -m display --focus north
-lcmd - l   	  : yabai -m window --focus east  || yabai -m display --focus east
 ctrl - left   : yabai -m window --focus west  || yabai -m display --focus west
 ctrl - down   : yabai -m window --focus south || yabai -m display --focus south
 ctrl - up     : yabai -m window --focus north || yabai -m display --focus north
