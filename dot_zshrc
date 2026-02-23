@@ -38,7 +38,7 @@ plugins=(
 
 # User configuration
 
-export PATH=/opt/homebrew/bin:$HOME/bin:/opt/homebrew/opt/python/libexec/bin:$PATH
+export PATH=/opt/homebrew/bin:/opt/homebrew/opt/util-linux/sbin/:$HOME/bin:/opt/homebrew/opt/python/libexec/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,4 +76,5 @@ source ~/.zsh/zsh.zsh
 
 eval "$(starship init zsh)"
 
-export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+# Added by Antigravity
+export PATH="/Users/manuelperalta/.antigravity/antigravity/bin:$PATH"

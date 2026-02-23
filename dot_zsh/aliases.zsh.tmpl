@@ -25,6 +25,7 @@ alias gpom="git pull origin master"
 alias gcom="git checkout master"
 alias gmaster="git fetch origin; git checkout master; git pull origin master"
 alias gmain="git fetch origin; git checkout main; git pull origin main"
+alias gdevelop="git fetch origin; git checkout develop; git pull origin develop"
 alias gfo="git fetch origin"
 alias gf="git fuzzy"
 alias gfs="git fuzzy status"
@@ -49,9 +50,14 @@ alias tmuxupdateplugins='~/.tmux/plugins/tpm/bin/update_plugins'
 alias tmuxrc='tmux source ~/.tmux.conf'
 alias tmux-layout-copy="tmux display-message -p '#{window_layout}' | tee >(tr -d '\n' | pbcopy)"
 
+# ai
+#########
+alias gcai='git diff --cached | gemini /commit | pbcopy && pbpaste'
+
 # Misc
 ############
 alias 'c.'="code ."
+alias 'a.'="agy ."
 alias cm="chezmoi"
 alias order='sort | uniq -c | sort -nr'
 alias count='sort | uniq -c | sort -nr'

@@ -24,9 +24,9 @@
     lt = describe --tags --abbrev=0
     l = log --graph --date=short
     changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-    difff = difftool --name-status
-    diffs = difftool --staged
-    diffh = difftool HEAD^
+    difff = diff --name-status
+    diffs = diff --staged
+    diffh = diff HEAD^
     r = remote -v                    # show remotes (verbose)
     sb = "!git branch | fzf | xargs git switch"
     conflicted = "!vim +Conflicted" # Uses https://github.com/christoomey/vim-conflicted for solving merge conflicts
@@ -37,31 +37,21 @@
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
-    pager = delta
     autocrlf = input
-
-[diff]
-    tool = difftastic
-    external = difft
-
-[difftool]
-    prompt = false
-
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE" --display=side-by-side-show-both --color=always
+    pager = delta
 
 [pager]
-    difftool = true
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
 
 [delta]
-    features = line-numbers decorations
-    side-by-side = true
-    syntax-theme = Dracula
-    plus-style = syntax "#003800"
-    minus-style = syntax "#3f0001"
+    features = line-numbers decorations side-by-side
+    navigate = true
 
 [delta "decorations"]
     commit-decoration-style = bold yellow box ul

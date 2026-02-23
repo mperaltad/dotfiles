@@ -1,0 +1,17 @@
+description = "Generates a Git commit message from staged changes."
+
+prompt = """
+Write a Conventional Commit message for the provided diff.
+
+### STRICT RULES:
+1. DO NOT use any tools, functions, or shell commands.
+2. DO NOT try to read files or search the directory.
+3. OUTPUT ONLY the final command string.
+4. FORMAT: git commit -m "<type>(<scope>): <description>"
+5. NO markdown blocks (no backticks), NO conversational text.
+6. Subject: Imperative, present tense, no capital first letter, no period.
+7. No emojis.
+8. No explanations or conversational text.
+
+Diff content follows:
+"""
