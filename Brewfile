@@ -1,7 +1,8 @@
 tap "1password/tap"
+tap "asmvik/formulae"
 tap "domt4/autoupdate"
 tap "felixkratz/formulae"
-tap "koekeishiya/formulae"
+tap "jackielii/tap"
 tap "morantron/tmux-fingers"
 brew "ack"
 brew "tree"
@@ -66,9 +67,9 @@ brew "watch"
 brew "wget"
 brew "xpdf"
 brew "zsh"
+brew "asmvik/formulae/yabai"
 brew "felixkratz/formulae/borders"
-brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+brew "jackielii/tap/skhd-zig"
 brew "morantron/tmux-fingers/tmux-fingers"
 cask "1password"
 cask "1password-cli"
@@ -110,6 +111,7 @@ cask "xmind"
 mas "Clocker", id: 1056643111
 mas "Hidden Bar", id: 1452453066
 mas "MeetingBar", id: 1532419400
+mas "Numbers", id: 409203825
 mas "Tomato One", id: 907364780
 vscode "atlassian.atlascode"
 vscode "catppuccin.catppuccin-vsc"

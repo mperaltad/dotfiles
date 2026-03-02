@@ -36,13 +36,21 @@ lalt - 6 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [
 
 # Resize windows
 ctrl + shift - left		: yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
-ctrl + shift - up    	: yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
 ctrl + shift - down    	: yabai -m window --resize bottom:0:-100 || yabai -m window --resize top:0:-100
+ctrl + shift - up    	: yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
 ctrl + shift - right 	: yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
+ctrl + shift - h		: yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
+ctrl + shift - j    	: yabai -m window --resize bottom:0:-100 || yabai -m window --resize top:0:-100
+ctrl + shift - k    	: yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
+ctrl + shift - l     	: yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
 
 # Swap windows
 ctrl + lalt - left 	: yabai -m window --warp west || $(yabai -m window --display west && yabai -m display --focus west && yabai -m window --warp last) || yabai -m window --move rel:-10:0
 ctrl + lalt - down 	: yabai -m window --warp south || $(yabai -m window --display south && yabai -m display --focus south) || yabai -m window --move rel:0:10
 ctrl + lalt - up 	: yabai -m window --warp north || $(yabai -m window --display north && yabai -m display --focus north) || yabai -m window --move rel:0:-10
 ctrl + lalt - right : yabai -m window --warp east || $(yabai -m window --display east && yabai -m display --focus east && yabai -m window --warp first) || yabai -m window --move rel:10:0
+ctrl + lalt - h 	: yabai -m window --warp west || $(yabai -m window --display west && yabai -m display --focus west && yabai -m window --warp last) || yabai -m window --move rel:-10:0
+ctrl + lalt - j 	: yabai -m window --warp south || $(yabai -m window --display south && yabai -m display --focus south) || yabai -m window --move rel:0:10
+ctrl + lalt - k 	: yabai -m window --warp north || $(yabai -m window --display north && yabai -m display --focus north) || yabai -m window --move rel:0:-10
+ctrl + lalt - l     : yabai -m window --warp east || $(yabai -m window --display east && yabai -m display --focus east && yabai -m window --warp first) || yabai -m window --move rel:10:0
 
