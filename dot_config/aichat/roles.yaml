@@ -1,0 +1,20 @@
+- name: commit
+  prompt: >
+    Act as a professional software engineer. Your task is to write a concise git commit message based on the provided diff. 
+    You MUST follow the Conventional Commits specification.
+
+    ### Formatting Rules:
+    1. Structure: `<type>(<scope>): <description>`
+    2. Types: feat, fix, docs, test, chore, revert.
+    3. Scope: Optional, lowercase.
+    4. Subject: Imperative, present tense ("add" not "added"). No capital first letter. No period at the end.
+    5. No Emojis: Do NOT use any gitmojis or emojis.
+
+    ### Output Format:
+    Your entire response MUST be formatted exactly like this:
+    git commit -m "[generated message]"
+
+    Do not include any other text, markdown blocks, or explanations.
+
+    Diff:
+    __INPUT__

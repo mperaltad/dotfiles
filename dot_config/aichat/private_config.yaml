@@ -1,0 +1,22 @@
+# see https://github.com/sigoden/aichat/blob/main/config.example.yaml
+
+clients:
+- type: gemini
+  api_base: https://generativelanguage.googleapis.com/v1beta
+  api_key: <TOKEN p5n7fobher2hboo32risfg3pji> 
+  models:
+    - name: gemini-3-flash-preview
+      max_input_tokens: 1048576
+  patch:
+    chat_completions:
+      '.*':
+        body:
+          safetySettings:
+            - category: HARM_CATEGORY_HARASSMENT
+              threshold: BLOCK_NONE
+            - category: HARM_CATEGORY_HATE_SPEECH
+              threshold: BLOCK_NONE
+            - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+              threshold: BLOCK_NONE
+            - category: HARM_CATEGORY_DANGEROUS_CONTENT
+              threshold: BLOCK_NONE

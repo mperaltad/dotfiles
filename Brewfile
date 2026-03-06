@@ -5,6 +5,7 @@ tap "felixkratz/formulae"
 tap "jackielii/tap"
 tap "morantron/tmux-fingers"
 brew "ack"
+brew "aichat"
 brew "tree"
 brew "autoconf"
 brew "automake"
@@ -112,6 +113,7 @@ mas "Clocker", id: 1056643111
 mas "Hidden Bar", id: 1452453066
 mas "MeetingBar", id: 1532419400
 mas "Numbers", id: 409203825
+mas "Noise Alerts", id: 1632993345
 mas "Tomato One", id: 907364780
 vscode "atlassian.atlascode"
 vscode "catppuccin.catppuccin-vsc"
