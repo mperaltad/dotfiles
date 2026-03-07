@@ -1,3 +1,8 @@
+[ExtractDialog]
+2560x1440 screen: Height=1406
+2560x1440 screen: Width=2198
+DirHistory[$e]=$HOME/Descargas/KCD2/
+
 [General]
 AutoExpandFolders=true
 EditableUrl=true
@@ -10,6 +15,9 @@ ShowToolTips=true
 ShowZoomSlider=false
 Version=202
 ViewPropsTimestamp=2025,7,29,13,37,58.178
+
+[IconsMode]
+PreviewSize=128
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false

@@ -1,7 +1,7 @@
 [Daemon]
 Autolock=true
-LockGrace=30
-Timeout=20
+LockGrace=0
+Timeout=15
 
 [Greeter]
 Theme=Sweet

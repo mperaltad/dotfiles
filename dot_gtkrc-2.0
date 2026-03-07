@@ -6,9 +6,9 @@ gtk-menu-images=1
 gtk-button-images=1
 gtk-cursor-blink-time=1000
 gtk-cursor-blink=1
+gtk-cursor-theme-size=24
 gtk-cursor-theme-name="catppuccin-mocha-dark-cursors"
 gtk-sound-theme-name="freedesktop"
 gtk-icon-theme-name="breeze-dark"
 gtk-font-name="FiraCode Nerd Font,  10"
-gtk-cursor-theme-size=24
 

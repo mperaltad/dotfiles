@@ -4,8 +4,17 @@
             {
                 "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": false,
+                "autoBrightnessCurve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
                 "autoRotation": "InTabletMode",
-                "brightness": 0,
+                "automaticBrightness": false,
+                "brightness": 0.3,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "eDP-1",
@@ -18,7 +27,7 @@
                 "maxBitsPerColor": 0,
                 "mode": {
                     "height": 1440,
-                    "refreshRate": 120000,
+                    "refreshRate": 60001,
                     "width": 2560
                 },
                 "overscan": 0,
@@ -26,6 +35,7 @@
                 "scale": 1.2,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
+                "sharpness": 0,
                 "transform": "Normal",
                 "uuid": "9f97726e-5551-4316-a69d-a33783f642a3",
                 "vrrPolicy": "Automatic",
@@ -63,7 +73,16 @@
             {
                 "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": false,
+                "autoBrightnessCurve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
                 "autoRotation": "InTabletMode",
+                "automaticBrightness": false,
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
@@ -85,6 +104,7 @@
                 "scale": 1,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
+                "sharpness": 0,
                 "transform": "Normal",
                 "uuid": "ca1811bc-a132-428a-b5b6-03421e77c5c6",
                 "vrrPolicy": "Never",
@@ -93,7 +113,16 @@
             {
                 "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": true,
+                "autoBrightnessCurve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
                 "autoRotation": "InTabletMode",
+                "automaticBrightness": false,
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
@@ -114,6 +143,7 @@
                 "scale": 1,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
+                "sharpness": 0,
                 "transform": "Normal",
                 "uuid": "3d084c6d-817c-47d0-a122-6aa7d570a0b1",
                 "vrrPolicy": "Never",
@@ -134,7 +164,7 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0,
+                        "priority": 1,
                         "replicationSource": ""
                     }
                 ]
@@ -269,7 +299,7 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0,
+                        "priority": 1,
                         "replicationSource": ""
                     }
                 ]
@@ -328,6 +358,41 @@
                 "lidClosed": false,
                 "outputs": [
                     {
+                        "enabled": false,
+                        "outputIndex": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "priority": -1,
+                        "replicationSource": ""
+                    },
+                    {
+                        "enabled": true,
+                        "outputIndex": 2,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "priority": 1,
+                        "replicationSource": ""
+                    },
+                    {
+                        "enabled": false,
+                        "outputIndex": 3,
+                        "position": {
+                            "x": 4389,
+                            "y": 0
+                        },
+                        "priority": -1,
+                        "replicationSource": ""
+                    }
+                ]
+            },
+            {
+                "lidClosed": false,
+                "outputs": [
+                    {
                         "enabled": true,
                         "outputIndex": 0,
                         "position": {
@@ -335,26 +400,76 @@
                             "y": 0
                         },
                         "priority": 0,
-                        "replicationSource": ""
-                    },
-                    {
-                        "enabled": true,
-                        "outputIndex": 2,
-                        "position": {
-                            "x": 1829,
-                            "y": 0
-                        },
-                        "priority": 1,
                         "replicationSource": ""
                     },
                     {
                         "enabled": true,
                         "outputIndex": 3,
                         "position": {
+                            "x": 2134,
+                            "y": 0
+                        },
+                        "priority": 1,
+                        "replicationSource": ""
+                    }
+                ]
+            },
+            {
+                "lidClosed": true,
+                "outputs": [
+                    {
+                        "enabled": false,
+                        "outputIndex": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "priority": -1,
+                        "replicationSource": ""
+                    },
+                    {
+                        "enabled": true,
+                        "outputIndex": 2,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "priority": 0,
+                        "replicationSource": ""
+                    },
+                    {
+                        "enabled": false,
+                        "outputIndex": 3,
+                        "position": {
                             "x": 4389,
                             "y": 0
                         },
-                        "priority": 2,
+                        "priority": -1,
+                        "replicationSource": ""
+                    }
+                ]
+            },
+            {
+                "lidClosed": true,
+                "outputs": [
+                    {
+                        "enabled": false,
+                        "outputIndex": 0,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "priority": -1,
+                        "replicationSource": ""
+                    },
+                    {
+                        "enabled": true,
+                        "outputIndex": 3,
+                        "position": {
+                            "x": 2134,
+                            "y": 0
+                        },
+                        "priority": 0,
                         "replicationSource": ""
                     }
                 ]

@@ -132,13 +132,9 @@ ForegroundNormal=144,144,171
 ForegroundPositive=166,218,149
 ForegroundVisited=198,160,246
 
-[DirSelect Dialog]
-DirSelectDialog Size=814,572
-History Items[$e]=file:$HOME/Insync/manuchorima@gmail.com/Google Drive/Apps/Obsidian/Personal,file:$HOME/.local/share/bottles/bottles/,file:$HOME/.local/share/bottles/,file:$HOME/.local/share/,file:$HOME/Bottles,file:$HOME,file:$HOME/Bottles,file:$HOME/Bottles
-Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x86\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
-
 [General]
 BrowserApplication=google-chrome.desktop
+ColorScheme=Scratchy
 ColorSchemeHash=34bd8bad1192a8d612892100d65539ea91e87b50
 XftHintStyle=hintslight
 XftSubPixel=none
@@ -155,15 +151,15 @@ Theme=breeze-dark
 LookAndFeelPackage=Scratchy
 ScrollbarLeftClickNavigatesByPage=true
 SmoothScroll=false
+contrast=4
+frameContrast=0.2
 widgetStyle=qt6ct-style
 
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
 Breadcrumb Navigation=false
-Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
+Decoration position=0
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
@@ -174,10 +170,19 @@ Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=142
-View Style=DetailTree
+View Style=Detail
 
 [Shortcuts]
-FullScreen=F11; Ctrl+Shift+F
+Back=Back
+BackwardWord=Alt+Left
+Close=Meta+W; Ctrl+W; Ctrl+Esc
+Copy=Ctrl+C; Ctrl+Ins; Meta+C
+Cut=Ctrl+X; Shift+Del; Meta+X
+Forward=Forward
+ForwardWord=Alt+Right
+NextCompletion=
+Paste=Meta+V; Shift+Ins; Ctrl+V
+PrevCompletion=
 
 [Sounds]
 Theme=freedesktop
@@ -187,6 +192,8 @@ activeBackground=24,25,38
 activeBlend=24,25,38
 activeFont=FiraCode Nerd Font,10,-1,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
 activeForeground=202,211,245
+frame=250,179,135
 inactiveBackground=24,25,38
 inactiveBlend=161,169,177
 inactiveForeground=184,192,224
+inactiveFrame=69,71,90

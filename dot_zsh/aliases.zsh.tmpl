@@ -50,10 +50,6 @@ alias tmuxupdateplugins='~/.tmux/plugins/tpm/bin/update_plugins'
 alias tmuxrc='tmux source ~/.tmux.conf'
 alias tmux-layout-copy="tmux display-message -p '#{window_layout}' | tee >(tr -d '\n' | pbcopy)"
 
-# ai
-#########
-alias gcai='git diff --cached | gemini /commit | pbcopy && pbpaste'
-
 # Misc
 ############
 alias 'c.'="code ."

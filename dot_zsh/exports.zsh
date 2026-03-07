@@ -12,3 +12,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+export STEAMLIBRARY="$HOME/.local/share/Steam"
+export PROTON="$HOME/.local/share/Steam/compatibilitytools.d/GE-Proton10-25/files"
